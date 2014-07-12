@@ -14,8 +14,8 @@ module BDDfire
       say BDDfire::VERSION
     end
     
-    desc "cucumber-generate", "Set up cucumber"
-    def cucumber
+    desc "fire_cucumber", "Set up cucumber"
+    def fire_cucumber
       genarate_gemfile
       insert_gem 'cucumber'
       insert_gem 'capybara'
@@ -46,8 +46,8 @@ module BDDfire
       append_file ".gitignore", ".travis.yml\n"
     end
 
-    desc "rspec", "Set up rspec"
-    def rspec
+    desc "fire_rspec", "Set up rspec"
+    def fire_rspec
       genarate_gemfile
       insert_gem 'rspec'
       generate_rakefile
@@ -55,8 +55,8 @@ module BDDfire
       copy_file "spec/spec_helper.rb"
     end
     
-    desc "yard", "Set up Yard"
-    def yard
+    desc "generate_yard", "Set up Yard"
+    def generate_yard
       genarate_gemfile
       insert_gem 'yard'
       

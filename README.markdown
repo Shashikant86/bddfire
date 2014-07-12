@@ -13,7 +13,7 @@ In your project's root directory...
 
 ### Cucumber
 
-    $ bddfire cucumber
+    $ bddfire fire_cucumber
 
 This will create a `features` directory with all the files you need to hit the
 

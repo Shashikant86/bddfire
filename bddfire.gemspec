@@ -10,8 +10,9 @@ Gem::Specification.new do |s|
   s.email       = ["shashikant.jagtap@aol.co.uk"]
   s.homepage    = "https://github.com/Shashikant86/bddfire"
   s.license       = 'MIT'
-  s.summary     = %q{Generate template project for the cucumber BDD with related tools}
-  s.description = %q{Blue print for the cucumber, capybara, cuke_sniffer, rubocop, relish, yard and many of them libraries}
+  s.required_ruby_version = '>= 1.9.3'
+  s.summary     = %q{Get started with BDD, Cucumber and friends in a minute}
+  s.description = %q{BDD Blue print for the cucumber, capybara, selenium, poltergeist, cuke_sniffer, rubocop, relish, yard and many more awesome libraries}
   s.add_dependency "thor"
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
@@ -27,4 +28,5 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+  s.post_install_message = "Thanks for installing BDDfire gem. More exciting BDD stuff on the way. Stay Tuned !"
 end
