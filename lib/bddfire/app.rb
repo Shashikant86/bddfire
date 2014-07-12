@@ -14,24 +14,32 @@ module BDDfire
       say BDDfire::VERSION
     end
     
-    desc "cucumber", "Set up cucumber"
+    desc "cucumber-generate", "Set up cucumber"
     def cucumber
       genarate_gemfile
       insert_gem 'cucumber'
       insert_gem 'capybara'
       insert_gem 'selenium-webdriver'
       insert_gem 'poltergeist'
+      insert_gem 'rake'
+      insert_gem 'yard-cucumber'
+      insert_gem 'redcarpet'
+      insert_gem 'rubocop'
+      insert_gem 'cuke_sniffer'
       generate_rakefile
       add_task BDDfire::Tasks.cucumber
+      add_task BDDfire::Tasks.cuke_sniffer
+      add_task BDDfire::Tasks.rubocop
       add_file "features/step_definitions/#{project_name}_steps.rb"
       add_file "features/#{project_name}.feature"
-      add_file "cucumber.yml"
-      add_file ".rubocop.yml"
-      add_file ".relish"
-      add_file ".ruby-version"
-      add_file ".travis.yml"
+      copy_file "config_files/cucumber.yml"
+      copy_file "config_files/.rubocop.yml"
+      copy_file "config_files/.ruby-version"
+      copy_file "config_files/.travis.yml"
+      copy_file "config_files/.relish"
       copy_file "features/support/env.rb"
       copy_file "features/support/hooks.rb"
+      copy_file "features/support/responsive.rb"
       template "features/support/helpers.erb", "features/support/helpers.rb"
       init_gitignore
       append_file ".gitignore", ".ruby-version\n"
@@ -58,24 +66,6 @@ module BDDfire
       init_gitignore
       append_file ".gitignore", "doc/*\n"
       append_file ".gitignore", ".yardoc\n"
-    end
-    
-    desc "cuke_sniffer", "Set up cuke_sniffer"
-    def cuke_sniffer
-      genarate_gemfile
-      insert_gem 'cuke_sniffer'
-      
-      generate_rakefile
-      add_task BDDfire::Tasks.cuke_sniffer
-    end
-   
-    desc "rubocop", "Set up rubocop"
-    def cuke_sniffer
-      genarate_gemfile
-      insert_gem 'rubocop'
-      
-      generate_rakefile
-      add_task BDDfire::Tasks.rubocop
     end
     
     private

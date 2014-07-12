@@ -1,0 +1,16 @@
+language: ruby
+cache: bundler
+
+rvm:
+  - 2.0.0
+
+before_script: 'bundle install'
+script: 'bundle exec rake features'
+
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    - your_email
