@@ -1,0 +1,8 @@
+pkg/*
+tmp/*
+doc/*
+*.gem
+.bundle
+.yardoc
+.ruby-version
+
