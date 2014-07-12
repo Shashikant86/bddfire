@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Shashikant Jagtap"]
   s.email       = ["shashikant.jagtap@aol.co.uk"]
-  s.homepage    = "http://rubygems.org/gems/bddfire"
+  s.homepage    = "https://github.com/Shashikant86/bddfire"
   s.license       = 'MIT'
   s.summary     = %q{Generate template project for the cucumber BDD with related tools}
   s.description = %q{Blue print for the cucumber, capybara, cuke_sniffer, rubocop, relish, yard and many of them libraries}
