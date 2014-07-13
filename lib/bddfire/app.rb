@@ -27,6 +27,7 @@ module BDDfire
       insert_gem 'rubocop'
       insert_gem 'cuke_sniffer'
       insert_gem 'json'
+      insert_gem 'rspec'
       generate_rakefile
       add_task BDDfire::Tasks.cucumber
       add_task BDDfire::Tasks.cuke_sniffer

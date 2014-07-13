@@ -22,7 +22,7 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 Capybara.register_driver :browserstack do |app|
-    stackToUse = ENV['BS_STACK'] || 'osx_firefox_15'
+    stackToUse = ENV['BS_STACK'] || 'osx_firefox'
     json = JSON.load(open(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'browsers.json'))))
     config = json[stackToUse]
     unless config
