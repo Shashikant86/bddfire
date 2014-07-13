@@ -1,5 +1,11 @@
 require 'yard'
+
 YARD::Rake::YardocTask.new do |t|
-  t.files = ['lib/**/*.rb', '-', 'CHANGELOG', 'LICENSE']
-  t.options = ['--no-private', '--title', '{{project_name}} API Documentation']
+t.files   = ['features/**/*.feature', 'features/**/*.rb']
+t.options = ['--any', '--extra', '--opts'] # optional
 end
+
+task :yard_bundle do 
+  sh "bundle exec yardoc 'example/**/*.rb' 'example/**/*.feature'"
+end
+

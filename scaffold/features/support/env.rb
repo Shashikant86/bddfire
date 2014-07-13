@@ -4,6 +4,7 @@ require "Capybara/cucumber"
 require "rspec"
 require 'capybara/poltergeist'
 require 'selenium-webdriver'
+require 'rubocop'
 
 Capybara.default_driver = :selenium
 
