@@ -26,20 +26,27 @@ module BDDfire
       insert_gem 'redcarpet'
       insert_gem 'rubocop'
       insert_gem 'cuke_sniffer'
+      insert_gem 'json'
       generate_rakefile
       add_task BDDfire::Tasks.cucumber
       add_task BDDfire::Tasks.cuke_sniffer
       add_task BDDfire::Tasks.rubocop
+      copy_file "features/step_definitions/google_steps.rb"
       add_file "features/step_definitions/#{project_name}_steps.rb"
       add_file "features/#{project_name}.feature"
+      copy_file "features/google.feature"
       copy_file "cucumber.yml"
       copy_file ".rubocop.yml"
       copy_file ".ruby-version"
       copy_file ".travis.yml"
       copy_file ".relish"
+      copy_file ".yard.yml"
+      copy_file "browser.json"
       copy_file "features/support/env.rb"
       copy_file "features/support/hooks.rb"
       copy_file "features/support/responsive.rb"
+      copy_file "features/pages/HomePage.rb"
+      copy_file "features/pages/Abstract.rb"
       template "features/support/helpers.erb", "features/support/helpers.rb"
       init_gitignore
       append_file ".gitignore", ".ruby-version\n"
