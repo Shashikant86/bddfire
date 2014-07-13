@@ -1,9 +1,11 @@
 # config/cucumber.yml
 ##YAML Template
 ---
-default: --profile html_report --profile test
+default: --profile html_report --profile test -p selenium
 html_report: --format pretty --format html --out=features_report.html
 bvt: --tags @test
 browserstack : DRIVER=browserstack 
 poltergeist : DRIVER=poltergeist 
-webdriver : DRIVER=webdriver
+selenium : DRIVER=selenium
+appium : DRIVER=appium
+sauce : DRIVER=sauce
