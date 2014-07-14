@@ -1,0 +1,12 @@
+{
+  "name": "node packages for th BDDfire",
+  "version": "0.0.0",
+  "description": "BDDfire nodeJS modules",
+  "dependencies": {
+    "webdriverjs" : "*",
+    "appium": "*"
+  },
+
+  "author": "Shashikant Jagtap",
+  "license": "MIT"
+}
