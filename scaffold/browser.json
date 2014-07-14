@@ -1,0 +1,14 @@
+{
+  "ios_iphone_6": {
+    "device": "iPhone 5",
+    "browserName": "iPhone",
+    "os": "ios",
+    "os_version": "6.0"
+  },
+  "osx_firefox": {
+    "browser": "firefox",
+    "browser_version": "15.0",
+    "os": "OS X",
+    "os_version": "Snow Leopard"
+  }
+}
