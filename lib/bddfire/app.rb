@@ -43,6 +43,7 @@ module BDDfire
       copy_file ".relish"
       copy_file ".yard.yml"
       copy_file "browser.json"
+      copy_file "package.json"
       copy_file "features/support/env.rb"
       copy_file "features/support/hooks.rb"
       copy_file "features/support/responsive.rb"
