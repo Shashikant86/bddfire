@@ -45,6 +45,7 @@ module BDDfire
       copy_file "browser.json"
       copy_file "package.json"
       copy_file "README.md"
+      copy_file "ci_script"
       copy_file "features/support/env.rb"
       copy_file "features/support/hooks.rb"
       copy_file "features/support/responsive.rb"
@@ -90,6 +91,7 @@ module BDDfire
         append_file "Gemfile" do
           "source 'http://rubygems.org'\n\n" +
           "gem 'rake'\n"
+          "gem 'rubocop-checkstyle_formatter', require: false \n\n"
         end
       end
     end
