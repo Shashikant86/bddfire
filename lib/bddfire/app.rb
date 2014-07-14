@@ -28,6 +28,7 @@ module BDDfire
       insert_gem 'cuke_sniffer'
       insert_gem 'json'
       insert_gem 'rspec'
+      insert_gem "rubocop-checkstyle_formatter', require: false"
       generate_rakefile
       add_task BDDfire::Tasks.cucumber
       add_task BDDfire::Tasks.cuke_sniffer
@@ -91,7 +92,6 @@ module BDDfire
         append_file "Gemfile" do
           "source 'http://rubygems.org'\n\n" +
           "gem 'rake'\n"
-          "gem 'rubocop-checkstyle_formatter', require: false \n\n"
         end
       end
     end
