@@ -94,7 +94,6 @@ module BDDfire
         append_file "Gemfile" do
           "source 'http://rubygems.org'\n\n" +
           "gem 'rake'\n"
-          "gem 'bddfire'\n"
         end
       end
     end

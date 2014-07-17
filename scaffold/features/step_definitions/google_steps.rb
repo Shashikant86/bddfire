@@ -1,4 +1,3 @@
-require 'bddfire'
 
 Given(/^I am on the home page$/) do
  visit "http://www.google.com"
