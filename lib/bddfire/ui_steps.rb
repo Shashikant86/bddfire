@@ -7,5 +7,5 @@ end
 
 Then(/^I should see the text "(.*?)"$/) do |text|
   session = Capybara::Session.new(:poltergeist)
-  session.page.should have_content(text)
+  session.should have_content(text)
 end

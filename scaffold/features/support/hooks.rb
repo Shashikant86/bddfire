@@ -1,3 +1,4 @@
+require 'bddfire'
 Before do
   ## setup code
 end

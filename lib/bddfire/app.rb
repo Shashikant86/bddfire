@@ -19,6 +19,7 @@ module BDDfire
       genarate_gemfile
       insert_gem 'cucumber'
       insert_gem 'capybara'
+      insert_gem 'bddfire'
       insert_gem 'selenium-webdriver'
       insert_gem 'poltergeist'
       insert_gem 'rake'
@@ -93,6 +94,7 @@ module BDDfire
         append_file "Gemfile" do
           "source 'http://rubygems.org'\n\n" +
           "gem 'rake'\n"
+          "gem 'bddfire'\n"
         end
       end
     end

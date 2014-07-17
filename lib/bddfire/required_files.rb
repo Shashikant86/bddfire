@@ -5,5 +5,6 @@ require "rspec"
 require 'capybara/poltergeist'
 require 'selenium-webdriver'
 require 'rubocop'
+require 'bddfire'
 require 'rbconfig'
 include RbConfig
