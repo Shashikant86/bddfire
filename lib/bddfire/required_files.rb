@@ -1,10 +1,10 @@
 require 'rubygems'
 require 'bundler/setup'
-require "Capybara/cucumber"
-require "rspec"
-require 'capybara/poltergeist'
-require 'selenium-webdriver'
-require 'rubocop'
+require "capybara"
 require 'bddfire'
+require "cucumber"
+require "rspec"
+require 'selenium-webdriver'
 require 'rbconfig'
+require 'require_all'
 include RbConfig

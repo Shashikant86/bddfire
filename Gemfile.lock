@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bddfire (1.0.0)
+    bddfire (1.3.9)
       thor
 
 GEM
@@ -58,6 +58,7 @@ GEM
       archive-tar-minitar (>= 0.5.2)
       json (>= 1.4.6)
       rest-client (>= 1.6.1)
+    require_all (1.3.2)
     rest-client (1.7.1)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
@@ -102,6 +103,7 @@ DEPENDENCIES
   parallel_tests
   rake
   relish
+  require_all
   rspec
   rubocop
   yard
