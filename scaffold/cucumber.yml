@@ -1,6 +1,3 @@
-# config/cucumber.yml
-##YAML Template
----
 default: -p selenium
 html_report: --format pretty --format html --out=features_report.html
 bvt: --tags @test

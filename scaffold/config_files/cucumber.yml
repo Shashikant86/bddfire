@@ -1,6 +1,0 @@
-# config/cucumber.yml
-##YAML Template
----
-default: --profile html_report --profile test
-html_report: --format pretty --format html --out=features_report.html
-bvt: --tags @test
