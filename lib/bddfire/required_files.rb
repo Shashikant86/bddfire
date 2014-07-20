@@ -1,9 +1,0 @@
-require 'rubygems'
-require 'bundler/setup'
-require "capybara"
-require 'bddfire'
-require "cucumber"
-require "rspec"
-require 'selenium-webdriver'
-require 'rbconfig'
-include RbConfig

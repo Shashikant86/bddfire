@@ -1,5 +1,5 @@
 require 'bddfire/extensions/string'
-require 'bddfire/ui_steps'
+Dir[File.dirname(__FILE__) + '/bddfire/*.rb'].each {|file| require file }
 
 module BDDfire
   autoload :App,    "bddfire/app"

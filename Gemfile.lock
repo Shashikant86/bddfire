@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bddfire (1.4.6)
+    bddfire (1.5.1)
       thor
 
 GEM
