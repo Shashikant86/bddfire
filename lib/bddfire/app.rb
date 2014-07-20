@@ -1,6 +1,5 @@
 require 'thor'
 require 'bddfire/version'
-require 'require_all'
 
 module BDDfire
   class App < Thor
@@ -55,6 +54,7 @@ module BDDfire
       copy_file "features/support/responsive.rb"
       copy_file "features/pages/HomePage.rb"
       copy_file "features/pages/Abstract.rb"
+      template "features/support/helpers.erb", "features/support/helpers.rb"
       init_gitignore
       append_file ".gitignore", ".ruby-version\n"
       append_file ".gitignore", ".travis.yml\n"

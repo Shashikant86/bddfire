@@ -6,5 +6,4 @@ require "cucumber"
 require "rspec"
 require 'selenium-webdriver'
 require 'rbconfig'
-require 'require_all'
 include RbConfig

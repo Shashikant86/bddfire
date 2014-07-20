@@ -1,6 +1,4 @@
 require 'rubygems'
-require 'require_all'
-require 'rubygems'
 require 'bundler/setup'
 require "capybara"
 require 'bddfire'
