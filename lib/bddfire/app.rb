@@ -14,7 +14,7 @@ module BDDfire
       say BDDfire::VERSION
     end
     
-    desc "fire_cucumber", "Set up cucumber"
+    desc "fire_cucumber", "Set up cucumber framework with all the directories and standard templates, supporting all the available tools around cucumber"
     def fire_cucumber
       genarate_gemfile
       insert_gem 'cucumber'
@@ -60,7 +60,7 @@ module BDDfire
       append_file ".gitignore", ".travis.yml\n"
     end
 
-    desc "fire_rspec", "Set up rspec"
+    desc "fire_rspec", "Set up rspec framework with skeleton directories"
     def fire_rspec
       genarate_gemfile
       insert_gem 'rspec'
@@ -69,7 +69,7 @@ module BDDfire
       copy_file "spec/spec_helper.rb"
     end
     
-    desc "generate_yard", "Set up Yard"
+    desc "generate_yard", "This will generate yard documentation for your cucumber project"
     def generate_yard
       genarate_gemfile
       insert_gem 'yard'
@@ -94,6 +94,7 @@ module BDDfire
         append_file "Gemfile" do
           "source 'http://rubygems.org'\n\n" +
           "gem 'rake'\n"
+          "gem 'nokogiri', '1.6.1'\n"
         end
       end
     end
