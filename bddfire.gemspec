@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
   s.required_ruby_version = '>= 1.9.3'
   s.summary     = %q{Get started with BDD, Cucumber and friends in a minute}
-  s.description = %q{Instant BDD Framework - Ruby, Cucumber, Capybara, selenium, Appium, Saucelabs, Browserstack, poltergeist, cuke_sniffer, rubocop, relish, yard and many more awesome libraries}
+  s.description = %q{Instant BDD Framework - Ruby, Cucumber, Capybara, selenium, Appium, Saucelabs, Browserstack, Testingbot, poltergeist, cuke_sniffer, rubocop, relish, yard and many more awesome libraries}
   s.add_dependency "thor"
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
