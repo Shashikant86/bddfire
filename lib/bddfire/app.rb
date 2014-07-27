@@ -29,6 +29,7 @@ module BDDfire
       insert_gem 'cuke_sniffer'
       insert_gem 'json'
       insert_gem 'rspec'
+      insert_gem 'relish'
       insert_gem 'bddfire'
       insert_gem 'rubocop-checkstyle_formatter'
       generate_rakefile
