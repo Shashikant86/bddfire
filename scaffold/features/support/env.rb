@@ -58,6 +58,26 @@ Capybara.register_driver :browserstack do |app|
     )
 end
 
+Capybara.register_driver :testingbot do |app|
+    stackToUse = ENV['TB_STACK'] || 'osx_firefox'
+    json = JSON.load(open(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'browsers.json'))))
+    config = json[stackToUse]
+    unless config
+      puts "invalid TB_STACK specified. Was '#{stackToUse}'"
+      return
+    end
+
+    # Add default config
+    config['name'] = "#{config['os']} #{config['os_version']} - #{Time.now.strftime '%Y-%m-%d %H:%M'}"
+    config['acceptSslCert'] = false
+
+    Capybara::Selenium::Driver.new(app,
+      :browser => :remote,
+      :desired_capabilities => config,
+      :url => "http://KEY:SECRET@hub.testingbot.com/wd/hub"
+    )
+end
+
 Capybara.register_driver :sauce do |app|
   job_name = "Cucumber-Tests - #{Time.now.strftime '%Y-%m-%d %H:%M'}"
   browser =  ENV['SAUCE_BROWSER']  || 'firefox'

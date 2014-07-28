@@ -26,6 +26,7 @@ One command will install Ruby Cucumber framework with all possibly supported too
         * Appium : Mobile test automation Framework
         * Saucelabs : Cloud testing framework
         * Browserstack : Cloud testing framework
+        * TestingBot : Cloud testing framework
         * Relish : Living Documenation
         * Yard : Cucumber documentation
         * Rubocop : Ruby code review tool
@@ -84,6 +85,10 @@ Once installed, you can run cucumber with multiple caybara driver
 Use Browserstack : Please enter your BS_USERNAME and BS_KEY key in the env.rb file 
 
      $ bundle exec cucumber -p browserstak
+
+Use TestingBot : Please enter your TB_KEY and TB_SECRET key in the env.rb file 
+
+     $ bundle exec cucumber -p testingbot
 
 Using Appium, run Appium server in the background. You need to have iOS setup. 
 
