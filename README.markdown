@@ -6,7 +6,7 @@ Generate default toolkit around BDD with cucumber and friends
 The usual:
 
     $ gem install bddfire
-    
+
 or include it into the Gemfile
 
     gem 'bddfire'
@@ -68,59 +68,63 @@ Now, we need to run bundle install [Fix nokogiri error if you get any by using s
 
      $ bundle install
 
-Once installed, you can run cucumber with multiple caybara driver 
+Once installed, you can run cucumber with multiple caybara driver
 
- Use Selenium 
+ Use Selenium
 
-      $ bundle exec cucumber -p selenium 
+      $ bundle exec cucumber -p selenium
 
- Use Headless Poletergeist 
- 
+ Use Headless Poletergeist
+
       $ bundle exec cucumber -p poltergeist
 
- Use Saucelabs : Please enter your SAUCE_USERNAME and SAUCELABS key in the env.rb file 
+ Use Saucelabs : Please enter your SAUCE_USERNAME and SAUCELABS key in the env.rb file
 
-     $ bundle exec cucumber -p sauce 
- 
-Use Browserstack : Please enter your BS_USERNAME and BS_KEY key in the env.rb file 
+     $ bundle exec cucumber -p sauce
+
+Use Browserstack : Please enter your BS_USERNAME and BS_KEY key in the env.rb file
 
      $ bundle exec cucumber -p browserstak
 
-Use TestingBot : Please enter your TB_KEY and TB_SECRET key in the env.rb file 
+Use TestingBot : Please enter your TB_KEY and TB_SECRET key in the env.rb file
 
      $ bundle exec cucumber -p testingbot
 
-Using Appium, run Appium server in the background. You need to have iOS setup. 
+Using Appium, run Appium server in the background. You need to have iOS setup.
 
-     $ npm install 
+     $ npm install
      $ ./node_modules/.bin/appium
 
- Now run cucumber with appium 
- 
-     $ bundle exec cucumber -p appium         
- 
-## Use Rake 
+ Now run cucumber with appium andriod
+
+     $ bundle exec cucumber -p appium_android ADB_SERIAL=serial_number
+
+ Now run cucumber with appium iOS
+
+     $ bundle exec cucumber -p appium_ios
+
+## Use Rake
 
 You can also use Rake taks created automatically for you
 
      $ bundle exec rake features
- 
-You can run Cuke_sniffer report on your project 
+
+You can run Cuke_sniffer report on your project
 
       $ bundle exec rake cuke_sniffer
 
-You can run rubocop report on your project 
+You can run rubocop report on your project
 
       $ bundle exec rake rubocop
 
 
 ## CI Integration
 
-Currently, you can use the script 'ci_script' on Jenkins or Hudson. More CI inegration is on the way. 
+Currently, you can use the script 'ci_script' on Jenkins or Hudson. More CI inegration is on the way.
 
-You need pass rake rask to the script 
+You need pass rake rask to the script
 
-      $ ./ci_script features    
+      $ ./ci_script features
 
 
 ## Awesome and more awesome stuff is coming soon. STAY TUNED !

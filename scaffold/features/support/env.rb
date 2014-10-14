@@ -92,13 +92,16 @@ Capybara.register_driver :sauce do |app|
     :url => "http://SAUCE_USERNAME:SAUCE_API_KEY@ondemand.saucelabs.com:80/wd/hub")
 end
 
-Capybara.register_driver :appium do |app|
-    browserName = ENV['APPIUM_BROWSER_NAME'] || 'iOS'
-    device = ENV['APPIUM_DEVICE'] || 'iPhone Simulator'
-    platform = ENV['APPIUM_OS'] || 'Mac'
-    os_version = ENV['APPIUM_OS'] || '6.1'
-    app = ENV['APPIUM_OS'] || 'safari'
-    capabilities = {:browserName => browserName,  :os_version => os_version, :device => device,  "platform" => platform, "app"=>app}
+Capybara.register_driver :appium_android do |app|
+    capabilities = {:platformName => 'Android',  :deviceName => 'android', :browserName => 'Chrome', :uuid => ENV['ADB_SERIAL']}
+Capybara::Selenium::Driver.new(app,
+                                 :browser => :remote,
+                                 :desired_capabilities => capabilities,
+                                 :url => "http://0.0.0.0:4723/wd/hub")
+end
+
+Capybara.register_driver :appium_ios do |app|
+    capabilities = {:platform => 'Mac', :browserName => 'iOS', :version => '6.0'}
 Capybara::Selenium::Driver.new(app,
                                  :browser => :remote,
                                  :desired_capabilities => capabilities,
