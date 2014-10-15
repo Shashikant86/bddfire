@@ -8,30 +8,14 @@ module BDDfire
     def self.source_root
       File.expand_path('../../scaffold', File.dirname(__FILE__))
     end
-    
+
     desc "version", "current version"
     def version
       say BDDfire::VERSION
     end
-    
+
     desc "fire_cucumber", "Set up cucumber framework with all the directories and standard templates, supporting all the available tools around cucumber"
     def fire_cucumber
-      genarate_gemfile
-      insert_gem 'cucumber'
-      insert_gem 'capybara'
-      insert_gem 'bddfire'
-      insert_gem 'selenium-webdriver'
-      insert_gem 'poltergeist'
-      insert_gem 'rake'
-      insert_gem 'yard-cucumber'
-      insert_gem 'redcarpet'
-      insert_gem 'rubocop'
-      insert_gem 'cuke_sniffer'
-      insert_gem 'json'
-      insert_gem 'rspec'
-      insert_gem 'relish'
-      insert_gem 'bddfire'
-      insert_gem 'rubocop-checkstyle_formatter'
       generate_rakefile
       add_task BDDfire::Tasks.cucumber
       add_task BDDfire::Tasks.cuke_sniffer
@@ -40,6 +24,7 @@ module BDDfire
       add_file "features/step_definitions/#{project_name}_steps.rb"
       add_file "features/#{project_name}.feature"
       copy_file "features/google.feature"
+      copy_file "Gemfile"
       copy_file "cucumber.yml"
       copy_file ".rubocop.yml"
       copy_file ".ruby-version"
@@ -69,12 +54,12 @@ module BDDfire
       add_task BDDfire::Tasks.rspec
       copy_file "spec/spec_helper.rb"
     end
-    
+
     desc "generate_yard", "This will generate yard documentation for your cucumber project"
     def generate_yard
       genarate_gemfile
       insert_gem 'yard'
-      
+
       generate_rakefile
       add_task BDDfire::Tasks.yard(project_name)
 
@@ -82,13 +67,13 @@ module BDDfire
       append_file ".gitignore", "doc/*\n"
       append_file ".gitignore", ".yardoc\n"
     end
-    
+
     private
-    
+
     def project_name
       destination_root.split(/\/|\\/).last
     end
-    
+
     def genarate_gemfile
       unless destination_file_exists?("Gemfile")
         add_file "Gemfile"
@@ -110,25 +95,25 @@ module BDDfire
         end
       end
     end
-    
+
     def init_gitignore
       add_file ".gitignore" unless destination_file_exists?(".gitignore")
       ensure_eof_newline(".gitignore")
     end
-    
+
     def destination_file_exists?(filename)
       File.exist?(File.join(destination_root, filename))
     end
-    
+
     def insert_gem(gem_name)
       ensure_eof_newline("Gemfile")
       append_file "Gemfile", "gem '#{gem_name}'\n"
     end
-    
+
     def add_task(the_task)
       append_file "Rakefile", "\n\n#{the_task}\n"
     end
-    
+
     def ensure_eof_newline(filename)
       gsub_file(filename, /([^\n])\z/, "\\1\n")
     end
