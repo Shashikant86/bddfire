@@ -1,9 +1,4 @@
-require 'net/https'
-require_relative 'required_files'
-require "Capybara/cucumber"
-require "rspec"
-require 'selenium-webdriver'
-
+require_relative 'web/web_methods'
 
 Given(/^I am on "(.*?)"$/) do |url|
   visit(url)
