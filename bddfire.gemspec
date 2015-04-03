@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "capybara"
   s.add_development_dependency "rspec"
   s.add_development_dependency "selenium-webdriver"
+  s.add_development_dependency "poltergeist"
   s.add_development_dependency "appium_lib"
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {features}/*`.split("\n")
