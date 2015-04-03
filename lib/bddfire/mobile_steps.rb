@@ -3,7 +3,6 @@ require_relative 'required_files'
 require "Capybara/cucumber"
 require "rspec"
 require 'selenium-webdriver'
-require 'poltergeist'
 
 
 Given(/^I am on "(.*?)"$/) do |url|
