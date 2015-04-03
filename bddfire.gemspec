@@ -22,6 +22,12 @@ Gem::Specification.new do |s|
   s.add_development_dependency "selenium-webdriver"
   s.add_development_dependency "poltergeist"
   s.add_development_dependency "appium_lib"
+  s.add_runtime_dependency "cucumber"
+  s.add_runtime_dependency "capybara"
+  s.add_runtime_dependency "rspec"
+  s.add_runtime_dependency "selenium-webdriver"
+  s.add_runtime_dependency "poltergeist"
+  s.add_runtime_dependency "appium_lib"
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
