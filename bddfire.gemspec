@@ -14,20 +14,14 @@ Gem::Specification.new do |s|
   s.summary     = %q{Get started with BDD, Cucumber and friends in a minute}
   s.description = %q{Instant BDD Framework - Ruby, Cucumber, Capybara, selenium, Appium, Saucelabs, Browserstack, Testingbot, poltergeist, cuke_sniffer, rubocop, relish, yard and many more awesome libraries}
   s.add_dependency "thor"
-  s.add_development_dependency "aruba"
-  s.add_development_dependency "bluecloth"
-  s.add_development_dependency "cucumber"
-  s.add_development_dependency "capybara"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "selenium-webdriver"
-  s.add_development_dependency "poltergeist"
-  s.add_development_dependency "appium_lib"
-  s.add_runtime_dependency "cucumber"
-  s.add_runtime_dependency "capybara"
-  s.add_runtime_dependency "rspec"
-  s.add_runtime_dependency "selenium-webdriver"
-  s.add_runtime_dependency "poltergeist"
-  s.add_runtime_dependency "appium_lib"
+  s.add_development_dependency "aruba", '~> 0'
+  s.add_development_dependency "bluecloth", '~> 0'
+  s.add_runtime_dependency "cucumber", '~> 0'
+  s.add_runtime_dependency "capybara", '~> 0'
+  s.add_runtime_dependency "rspec", '~> 0'
+  s.add_runtime_dependency "selenium-webdriver", '~> 0'
+  s.add_runtime_dependency "poltergeist", '~> 0'
+  s.add_runtime_dependency "appium_lib", '~> 0'
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
