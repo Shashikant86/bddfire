@@ -1,4 +1,4 @@
-require_relative 'mobile/mobile_methods
+require_relative 'mobile/mobile_methods'
 
 Given(/^I am on "(.*?)"$/) do |url|
   visit(url)
