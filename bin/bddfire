@@ -3,5 +3,11 @@
 lib_dir = File.expand_path("../lib", File.dirname(__FILE__))
 $:.unshift lib_dir unless $:.include?(lib_dir)
 
-require 'bddfire'
-BDDfire::App.start
+require 'fileutils'
+# require 'bddfire'
+# BDDfire::App.start
+
+@root_dir =File.join(FileUtils.pwd, "framework")
+@source_dir = File.join(File.dirname(__FILE__), '..', 'scaffold')
+
+FileUtils.cp_r(@source_dir, @root_dir)
