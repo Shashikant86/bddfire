@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
+require 'thor'
+require 'rubygems'
+require 'bddfire'
 
 lib_dir = File.expand_path("../lib", File.dirname(__FILE__))
 $:.unshift lib_dir unless $:.include?(lib_dir)
 # require 'fileutils'
-require 'bddfire'
+require 'bddfire/version'
 BDDfire::App.start
 
 # @root_dir =File.join(FileUtils.pwd, "framework")
