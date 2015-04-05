@@ -13,9 +13,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
   s.summary     = %q{Get started with BDD, Cucumber and friends in a minute}
   s.description = %q{Instant BDD Framework - Ruby, Cucumber, Capybara, selenium, Appium, Saucelabs, Browserstack, Testingbot, poltergeist, cuke_sniffer, rubocop, relish, yard and many more awesome libraries}
-  s.add_dependency "thor"
-  s.add_development_dependency "aruba", '~> 0'
-  s.add_development_dependency "bluecloth", '~> 0'
   s.add_runtime_dependency "cucumber",  '~> 1.3', '>= 1.3.18'
   s.add_runtime_dependency "capybara", '~> 2.4.4', '>= 2.4.1'
   s.add_runtime_dependency "rspec", '~> 3.2.0', '>= 3.0.0'

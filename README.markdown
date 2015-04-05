@@ -35,32 +35,6 @@ One command will install Ruby Cucumber framework with all possibly supported too
 
 If you don't already have a `Gemfile` or `Rakefile`, one will be created.
 
-Output will look like this:
-
-      append  Gemfile
-      create  Rakefile
-      create  features/step_definitions/google_steps.rb
-      create  features/step_definitions/{project_nemae}_steps.rb
-      create  features/{project_nemae}.feature
-      create  features/google.feature
-      create  cucumber.yml
-      create  .rubocop.yml
-      create  .ruby-version
-      create  .travis.yml
-      create  .relish
-      create  .yard.yml
-      create  browser.json
-      create  package.json
-      create  README.md
-      create  ci_script
-      create  features/support/env.rb
-      create  features/support/hooks.rb
-      create  features/support/responsive.rb
-      create  features/pages/HomePage.rb
-      create  features/pages/Abstract.rb
-      create  features/support/helpers.rb
-      create  .gitignore
-
 
 ### Install & Run BDDfire framework
 
@@ -152,3 +126,11 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Contributing
+
+1. Fork it ( https://github.com/Shashikant86/bddfire/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
