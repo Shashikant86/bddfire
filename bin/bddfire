@@ -168,7 +168,7 @@ else
 	if cmd == "help"
   		print_help
 	elsif cmd == "fire_cucumber"
-    applinium_scaffold
+    bddfire_scaffold
 	elsif cmd == "version"
 		puts BDDfire::VERSION
   	else
