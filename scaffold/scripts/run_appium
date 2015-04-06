@@ -1,0 +1,11 @@
+#!/bin/bash
+export ADB_SERIAL=$2
+ruby -v
+bundle -v
+bundle install
+npm install
+./node_modules/.bin/appium &
+PID=$!
+sleep 5
+bundle exec cucumber ${ADB_SERIAL} DRIVER=appium -f pretty
+kill $PID
