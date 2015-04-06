@@ -19,7 +19,8 @@ In your project's root directory...
 
     $ bddfire fire_cucumber
 
-One command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. This will create all the directories and files to support following tools
+
+This will create 'cucumber' direcory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. This will create all the directories and files to support following tools
         * Capybara
         * Selenium-Webdriver
         * Poltergeist: PhantomJS based headless driver for capybara
@@ -38,8 +39,10 @@ If you don't already have a `Gemfile` or `Rakefile`, one will be created.
 
 ### Install & Run BDDfire framework
 
+
 Now, we need to run bundle install [Fix nokogiri error if you get any by using supported nokogiri version]
 
+     $ cd cucumber
      $ bundle install
 
 Once installed, you can run cucumber with multiple caybara driver
@@ -117,7 +120,7 @@ You can run rubocop report on your project
 
 ## Don't waste time writing steps. Use predefined
 
-You can use pre-defined steps here
+You can use [pre-defined-steps](predefined-steps/capybara_steps.md)
 
 # TODO
 

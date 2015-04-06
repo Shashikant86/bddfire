@@ -25,6 +25,11 @@ def bddfire_scaffold
   end
 
   msg("Info") do
+
+    puts "=======CREATING 'cucumber' DIRECTORY WITH TEST FRAMEWORK============\n \n \n"
+    puts "\n"
+    puts "\n"
+    sleep (2)
     puts "=======Copying all config files for cucumber projects============\n"
     sleep (2)
     puts "=======Copying Gemfile containing all required Gems============\n"
