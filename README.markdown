@@ -1,6 +1,6 @@
 # bddfire
 
-Generate default toolkit around BDD with cucumber and friends
+BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack.Generate default toolkit around BDD with cucumber and friends
 ## Installation
 
 The usual:
@@ -19,7 +19,7 @@ In your project's root directory...
 
     $ bddfire fire_cucumber
 
-One command will install Ruby Cucumber framework with all possibly supported tools. This will create all the directories and files to support following tools
+One command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. This will create all the directories and files to support following tools
         * Capybara
         * Selenium-Webdriver
         * Poltergeist: PhantomJS based headless driver for capybara
@@ -101,7 +101,28 @@ You need pass rake rask to the script
       $ ./ci_script features
 
 
-## Awesome and more awesome stuff is coming soon. STAY TUNED !
+## Use Rake
+You can also use Rake taks created automatically for you
+
+      $ bundle exec rake features
+
+You can run Cuke_sniffer report on your project
+
+      $ bundle exec rake cuke_sniffer
+
+You can run rubocop report on your project
+
+      $ bundle exec rake rubocop
+
+
+## Don't waste time writing steps. Use predefined
+
+You can use pre-defined steps here
+
+# TODO
+
+* Add more and more steps so that user won't need to write more code
+* Add examples to show use of native app automation  
 
 
 ## LICENSE

@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/Shashikant86/bddfire"
   s.license       = 'MIT'
   s.required_ruby_version = '>= 1.9.3'
-  s.summary     = %q{Get started with BDD, Cucumber and friends in a minute}
+  s.summary     = "BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework"
   s.description = %q{Instant BDD Framework - Ruby, Cucumber, Capybara, selenium, Appium, Saucelabs, Browserstack, Testingbot, poltergeist, cuke_sniffer, rubocop, relish, yard and many more awesome libraries}
   s.add_runtime_dependency "cucumber",  '~> 1.3', '>= 1.3.18'
   s.add_runtime_dependency "capybara", '~> 2.4.4', '>= 2.4.1'

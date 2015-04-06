@@ -14,3 +14,4 @@ gem 'json'
 gem 'rspec'
 gem 'relish'
 gem 'rubocop-checkstyle_formatter'
+gem "parallel_tests"

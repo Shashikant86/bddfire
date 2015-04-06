@@ -47,6 +47,8 @@ def bddfire_scaffold
     sleep (2)
     puts "=======Copying .yard.yml to generate YARD documentation for your project============\n"
     sleep (2)
+    puts "=======Copying Rakefile to generate Rake tasks ============\n"
+    sleep (2)
   end
 
   FileUtils.cp_r(@source_config_dir, @root_dir)
