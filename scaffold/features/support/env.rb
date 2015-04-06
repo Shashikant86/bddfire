@@ -37,6 +37,10 @@ Capybara.register_driver :poltergeist do |app|
     Capybara::Poltergeist::Driver.new(app, options)
 end
 
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
+
 Capybara.register_driver :browserstack do |app|
     stackToUse = ENV['BS_STACK'] || 'osx_firefox'
     json = JSON.load(open(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'browsers.json'))))
@@ -92,7 +96,7 @@ Capybara.register_driver :sauce do |app|
     :url => "http://SAUCE_USERNAME:SAUCE_API_KEY@ondemand.saucelabs.com:80/wd/hub")
 end
 
-Capybara.register_driver :appium_android do |app|
+Capybara.register_driver :appium_android_web do |app|
     capabilities = {:platformName => 'Android',  :deviceName => 'android', :browserName => 'Chrome', :uuid => ENV['ADB_SERIAL']}
 Capybara::Selenium::Driver.new(app,
                                  :browser => :remote,
@@ -100,8 +104,26 @@ Capybara::Selenium::Driver.new(app,
                                  :url => "http://0.0.0.0:4723/wd/hub")
 end
 
-Capybara.register_driver :appium_ios do |app|
+Capybara.register_driver :appium_ios_web do |app|
     capabilities = {:platformName => 'iOS', :platformVersion => '8.0', :deviceName=> 'iPhone 6', :browserName => 'Safari', :version => '6.0'}
+Capybara::Selenium::Driver.new(app,
+                                 :browser => :remote,
+                                 :desired_capabilities => capabilities,
+                                 :url => "http://0.0.0.0:4723/wd/hub")
+end
+
+Capybara.register_driver :appium_ios_native do |app|
+    # TODO
+    # capabilities = {:platformName => 'iOS', :platformVersion => '8.0', :deviceName=> 'iPhone 6', :browserName => 'Safari', :version => '6.0'}
+Capybara::Selenium::Driver.new(app,
+                                 :browser => :remote,
+                                 :desired_capabilities => capabilities,
+                                 :url => "http://0.0.0.0:4723/wd/hub")
+end
+
+Capybara.register_driver :appium_android_native do |app|
+    # TODO
+    # capabilities = {:platformName => 'Android',  :deviceName => 'android', :browserName => 'Chrome', :uuid => ENV['ADB_SERIAL']}
 Capybara::Selenium::Driver.new(app,
                                  :browser => :remote,
                                  :desired_capabilities => capabilities,
