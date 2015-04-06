@@ -8,4 +8,4 @@ selenium : DRIVER=selenium
 appium_android_web : DRIVER=appium_android
 appium_ios_web : DRIVER=appium_ios
 sauce : DRIVER=sauce
-chrome: DRIVER-chrome
+chrome: DRIVER=chrome

@@ -47,38 +47,53 @@ Now, we need to run bundle install [Fix nokogiri error if you get any by using s
 
 Once installed, you can run cucumber with multiple caybara driver
 
- Use Selenium
+## Don't waste time writing steps. Use predefined
+
+You can use Browser based [pre-defined-steps](predefined-steps/capybara_steps.md)
+You can use headless Poltergeist based [pre-defined-steps](predefined-steps/headless_steps.md)
+
+
+ ##### Use Selenium Firefox
 
       $ bundle exec cucumber -p selenium
 
- Use Headless Poletergeist
+ ##### Use Headless Poletergeist
 
       $ bundle exec cucumber -p poltergeist
 
- Use Saucelabs : Please enter your SAUCE_USERNAME and SAUCELABS key in the env.rb file
+ ##### Use Chrome Driver
+
+           $ bundle exec cucumber -p chrome
+
+
+ ##### Use Saucelabs :
+ Please enter your SAUCE_USERNAME and SAUCELABS key in the env.rb file
 
      $ bundle exec cucumber -p sauce
 
-Use Browserstack : Please enter your BS_USERNAME and BS_KEY key in the env.rb file
+ ##### Use Browserstack :
+ Please enter your BS_USERNAME and BS_KEY key in the env.rb file
 
      $ bundle exec cucumber -p browserstak
 
-Use TestingBot : Please enter your TB_KEY and TB_SECRET key in the env.rb file
+ ##### Use TestingBot :
+ Please enter your TB_KEY and TB_SECRET key in the env.rb file
 
      $ bundle exec cucumber -p testingbot
 
-Using Appium, run Appium server in the background. You need to have iOS setup.
+ ##### Using Appium:
+  run Appium server in the background. You need to have iOS setup.
 
      $ npm install
      $ ./node_modules/.bin/appium
 
  Now run cucumber with appium andriod
 
-     $ bundle exec cucumber -p appium_android ADB_SERIAL=serial_number
+     $ bundle exec cucumber -p appium_android_web ADB_SERIAL=serial_number
 
  Now run cucumber with appium iOS
 
-     $ bundle exec cucumber -p appium_ios
+     $ bundle exec cucumber -p appium_ios_web
 
 ## Use Rake
 
@@ -117,10 +132,6 @@ You can run rubocop report on your project
 
       $ bundle exec rake rubocop
 
-
-## Don't waste time writing steps. Use predefined
-
-You can use [pre-defined-steps](predefined-steps/capybara_steps.md)
 
 # TODO
 
