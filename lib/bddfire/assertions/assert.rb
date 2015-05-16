@@ -1,7 +1,6 @@
-require_relative 'web/web_methods'
 
 Then(/^page should have title "(.*?)"$/) do |title|
-  page.shaould have_title(title)
+  page.should have_title(title)
 end
 
 Then(/^I should see element "(.*?)" having text "(.*?)"$/) do |element, text|

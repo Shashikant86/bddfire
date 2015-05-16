@@ -1,4 +1,3 @@
-require_relative 'web/web_methods'
 
 Given(/^I am on "(.*?)"$/) do |url|
   visit(url)

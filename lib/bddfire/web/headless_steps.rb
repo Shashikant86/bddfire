@@ -1,4 +1,3 @@
-require_relative 'web/web_methods'
 
 Then(/^the response status code should be "(.*?)"$/) do |code|
   page_code = page.driver.status_code
