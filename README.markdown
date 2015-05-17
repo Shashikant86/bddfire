@@ -49,8 +49,8 @@ Once installed, you can run cucumber with multiple caybara driver
 
 ## Don't waste time writing steps. Use predefined
 
-You can use Browser based [pre-defined-steps](predefined-steps/capybara_steps.md)
-You can use headless Poltergeist based [pre-defined-steps](predefined-steps/headless_steps.md)
+You can use[Browser based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/capybara_steps.md) steps
+You can use headless Poltergeist based [headless Poltergeist based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/headless_steps.md) steps
 
 
  ##### Use Selenium Firefox

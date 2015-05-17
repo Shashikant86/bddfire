@@ -1,6 +1,6 @@
 
 Then(/^the response status code should be "(.*?)"$/) do |code|
-  page_code = page.driver.status_code
+  page_code = page.driver.status_code.to_s
   expect(page_code).to eq(code)
 end
 
