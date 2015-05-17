@@ -1,5 +1,4 @@
 require 'net/https'
-require_relative 'required_files'
 
 
 def check_valid_locator_type? type
