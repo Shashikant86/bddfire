@@ -21,17 +21,18 @@ In your project's root directory...
 
 
 This will create 'cucumber' direcory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. This will create all the directories and files to support following tools
-        * Capybara
-        * Selenium-Webdriver
-        * Poltergeist: PhantomJS based headless driver for capybara
-        * Appium : Mobile test automation Framework
-        * Saucelabs : Cloud testing framework
-        * Browserstack : Cloud testing framework
-        * TestingBot : Cloud testing framework
-        * Relish : Living Documenation
-        * Yard : Cucumber documentation
-        * Rubocop : Ruby code review tool
-        * CI Support Script
+* Capybara
+* Selenium-Webdriver
+* Poltergeist: PhantomJS based headless driver for capybara
+* Run scenarios in parallel 10 processes and rerun failed scenarios.
+* Appium : Mobile test automation Framework
+* Saucelabs : Cloud testing framework
+* Browserstack : Cloud testing framework
+* TestingBot : Cloud testing framework
+* Relish : Living Documenation
+* Yard : Cucumber documentation
+* Rubocop : Ruby code review tool
+* CI Support Script
 
 
 If you don't already have a `Gemfile` or `Rakefile`, one will be created.
@@ -45,98 +46,98 @@ Now, we need to run bundle install [Fix nokogiri error if you get any by using s
      $ cd cucumber
      $ bundle install
 
-Once installed, you can run cucumber with multiple caybara driver
+Once installed, you can run cucumber with multiple cabybara driver
 
-## Don't waste time writing steps. Use predefined
-
+#Usage
+### Pre-defined-steps
 You can use[Browser based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/capybara_steps.md) steps
 You can use headless Poltergeist based [headless Poltergeist based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/headless_steps.md) steps
 
+### Parallel Cucumber & Re-run Failed
+You can run entire test suite in 10 different processes but you can increase number of processes. The reports are generated for each process. If any scenario failed it will re-run. It will use poltergeist by default but you can change in Rakefile
 
- ##### Use Selenium Firefox
+         $ rake parallel_cucumber
 
-      $ bundle exec cucumber -p selenium
+###Selenium Firefox
+You can use selenium driver to run scenario in browser [firefox].
 
- ##### Use Headless Poletergeist
+      $ rake selenium
+
+You can run cucumber with profile like this
+
+         $ bundle exec cucumber -p selenium
+
+###Headless Poletergeist
+You can use PhantomJS based Capybara driver Poltergeist driver.
+
+
+You can run cucumber with profile like this
 
       $ bundle exec cucumber -p poltergeist
 
- ##### Use Chrome Driver
+OR
+
+      $ rake poltergeist
+
+###Chrome Driver
+You can run your scenarios in Google Chrome
+
+           $ rake poltergeist
+You can run cucumber with profile like this
 
            $ bundle exec cucumber -p chrome
 
 
- ##### Use Saucelabs :
- Please enter your SAUCE_USERNAME and SAUCELABS key in the env.rb file
+###Cloud Testing Frameworks
+ Please enter your USERNAME and KEY in the env.rb file
 
-     $ bundle exec cucumber -p sauce
+         $ rake sauce/browserstack/testingbot
+  OR
 
- ##### Use Browserstack :
- Please enter your BS_USERNAME and BS_KEY key in the env.rb file
+      $ bundle exec cucumber -p sauce/browserstack/testingbot
 
-     $ bundle exec cucumber -p browserstak
-
- ##### Use TestingBot :
- Please enter your TB_KEY and TB_SECRET key in the env.rb file
-
-     $ bundle exec cucumber -p testingbot
-
- ##### Using Appium:
-  run Appium server in the background. You need to have iOS setup.
+###Appium:
+Run Appium server in the background.
 
      $ npm install
      $ ./node_modules/.bin/appium
+OR
 
- Now run cucumber with appium andriod
+     $rake start_appium
 
-     $ bundle exec cucumber -p appium_android_web ADB_SERIAL=serial_number
+ Now run cucumber with appium. Make sure you updated env.rb file with capabilities you want to use for Android.
 
- Now run cucumber with appium iOS
+     $ bundle exec cucumber -p appium ADB_SERIAL=serial_number
 
-     $ bundle exec cucumber -p appium_ios_web
+ Now run cucumber with appium iOS. Make sure you updated env.rb file with capabilities you want to use for iOS
 
-## Use Rake
+     $ bundle exec cucumber -p appium
 
-You can also use Rake taks created automatically for you
+###Cuke_sniffer
+You can use cuke_sniffer to detect smells in your Cucumber. It will generate reports in the cuke_sniffer.html in the 'reports' directory.
 
-     $ bundle exec rake features
+      $ rake cuke_sniffer
 
-You can run Cuke_sniffer report on your project
+###Rubocop
 
-      $ bundle exec rake cuke_sniffer
+You can use rubocop to detect ruby errors in your Ruby file
 
-You can run rubocop report on your project
-
-      $ bundle exec rake rubocop
-
+      $ rake rubocop
+This will report all the offence in rubocop.
 
 ## CI Integration
 
-Currently, you can use the script 'ci_script' on Jenkins or Hudson. More CI inegration is on the way.
+Currently, you can use the script 'ci_script' on Jenkins or Hudson. More CI Integration is on the way.
 
 You need pass rake rask to the script
 
       $ ./ci_script features
 
 
-## Use Rake
-You can also use Rake taks created automatically for you
-
-      $ bundle exec rake features
-
-You can run Cuke_sniffer report on your project
-
-      $ bundle exec rake cuke_sniffer
-
-You can run rubocop report on your project
-
-      $ bundle exec rake rubocop
-
-
 # TODO
 
-* Add more and more steps so that user won't need to write more code
-* Add examples to show use of native app automation  
+ * Add more and more steps so that user won't need to write more code
+ * Add examples to show use of native app automation  
 
 
 ## LICENSE
