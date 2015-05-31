@@ -19,27 +19,27 @@
 ### User Actions
 
        Given  I am on “url”
-       When I filling “element” with “text”
-       When I click on “link”
-       When I click on “button”
+       When I fill in “element” with the text “text”
+       When I selet the “link” link
+       When I select the "button" button
        When I click on element having text “text"
-       When I checked “checkbox”
-       When I unchecked “checkbox”
+       When I check “checkbox”
+       When I uncheck “checkbox”
        When I choose “radio button”
-       When I select option “” from dropdown “”
-       When I attach file “file_path"to field “locator”
-       When I hover over element “locator “
+       When I select option “option” from the dropdown “dropdown”
+       When I attach the file “file_path" to the field “locator”
+       When I hover over the element “locator"
 
 ### Assertions
 
-       Then page should have title “"
-       Then I should see element “element” having text “text”
-       Then page should have element “element”
-       Then I should see element “element” having count “count”
-       Then page should have link “”
-       Then page should have button  “”
-       Then page should have field “”
-       Then page should have table “”
-       Then I should see element “” with checked field
-       Then I should see element “” with unchecked field
-       Then I should see content “” in the page
+       Then the page title is  “title"
+       Then I see the element “element” with the text “text”
+       Then page contains “element”
+       Then I see element “element” “count” times
+       Then page contains the link "link"
+       Then page contains the button  “button”
+       Then page contains the field “field”
+       Then page contains the table “table”
+       Then the element “element” is checked
+       Then the element “element” is unchecked
+       Then the page contains the following content "content"

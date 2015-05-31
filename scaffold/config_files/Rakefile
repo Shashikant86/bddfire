@@ -1,18 +1,61 @@
-equire 'rubygems'
+require 'rubygems'
 require 'cucumber'
 require 'cucumber/rake/task'
 require 'parallel'
 require 'json'
 require 'yard'
+require 'fileutils'
+
+ADB_SERIAL = "your_serial_number"
+
+task :cleanup do
+puts " ========Deleting old reports ang logs========="
+FileUtils.rm_rf('reports')
+File.delete("cucumber_failures.log") if File.exist?("cucumber_failures.log")
+File.new("cucumber_failures.log", "w")
+Dir.mkdir("reports")
+end
+
+task :parallel_run do
+puts "===== Executing Tests in parallel"
+system "bundle exec parallel_cucumber features/ -o \"-p parallel -p pretty\" -n 10"
+puts " ====== Parallel execution finished and cucumber_failure.log created ========="
+end
+
+task :rerun do
+if File.size("cucumber_failures.log") == 0
+puts "==== No failures. Everything Passed ========="
+else
+puts " =========Re-running Failed Scenarios============="
+system "bundle exec cucumber @cucumber_failures.log -f pretty"
+end
+end
+
+task :parallel_cucumber => [ :cleanup, :parallel_run, :rerun  ]
+
+Rake::Task["parallel_cucumber"].invoke
 
 
 YARD::Rake::YardocTask.new(:yard) do |t|
 t.files   = ['features/**/*.feature', 'features/**/*.rb']
-#t.options = ['--any', '--extra', '--opts'] # optional
 end
 
-Cucumber::Rake::Task.new(:cucumber) do |t|
-  t.cucumber_opts = "features --format pretty"
+Cucumber::Rake::Task.new(:seleium) do |t|
+  t.cucumber_opts = "features -p selenium --format pretty --profile html "
+end
+
+
+Cucumber::Rake::Task.new(:poltergeist) do |t|
+  t.cucumber_opts = "features -p poltergeist --format pretty --profile html "
+end
+
+
+Cucumber::Rake::Task.new(:sauce) do |t|
+  t.cucumber_opts = "features -p sauce --format pretty --profile html "
+end
+
+Cucumber::Rake::Task.new(:browserstack) do |t|
+  t.cucumber_opts = "features -p browserstack --format pretty --profile html "
 end
 
 task :parallel_cucumber do
@@ -21,4 +64,11 @@ end
 
 task :rubocop do
   sh "bundle exec rubocop features/"
+end
+
+task :appium do
+puts "===== Installing Appium with NodeJS====="
+sh "npm install"
+sh " ./node_modules/.bin/appium > /dev/null 2>&1"
+system "bundle exec cucumber -p appium_android_web ADB_SERIAL=#{ADB_SERIAL}"
 end

@@ -1,5 +1,5 @@
 default: -p selenium
-html_report: --format pretty --format html --out=features_report.html
+html: --format --out reports/test-report.html
 bvt: --tags @test
 browserstack : DRIVER=browserstack
 testingbot: DRIVER=testingbot
@@ -8,3 +8,6 @@ selenium : DRIVER=selenium
 appium : DRIVER=appium
 sauce : DRIVER=sauce
 chrome: DRIVER=chrome
+parallel_html: --format html --out reports/process<%= ENV['TEST_ENV_NUMBER'] %>.html
+pretty: -f pretty
+parallel: --format pretty --profile parallel_html --format ParallelTests::Cucumber::FailuresLogger --out cucumber_failures.log
