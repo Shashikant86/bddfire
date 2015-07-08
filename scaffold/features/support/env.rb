@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
-require "Capybara/cucumber"
+require "capybara/cucumber"
 require "rspec"
 require 'capybara/poltergeist'
 require 'selenium-webdriver'
@@ -15,7 +15,7 @@ Capybara.configure do |config|
   config.default_selector = :xpath
   config.default_wait_time = 60
 end
- 
+
 Capybara.register_driver :selenium do |app|
 
   profile = Selenium::WebDriver::Firefox::Profile.new
