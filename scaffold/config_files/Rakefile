@@ -39,7 +39,7 @@ YARD::Rake::YardocTask.new(:yard) do |t|
 t.files   = ['features/**/*.feature', 'features/**/*.rb']
 end
 
-Cucumber::Rake::Task.new(:seleium) do |t|
+Cucumber::Rake::Task.new(:selenium) do |t|
   t.cucumber_opts = "features -p selenium --format pretty --profile html "
 end
 
