@@ -50,7 +50,7 @@ OR
 ###Chrome Driver
 You can run your scenarios in Google Chrome
 
-           $ rake poltergeist
+           $ rake chrome
 You can run cucumber with profile like this
 
            $ bundle exec cucumber -p chrome
@@ -99,4 +99,4 @@ Currently, you can use the script 'ci_script' on Jenkins or Hudson. More CI Inte
 
 You need pass rake rask to the script
 
-      $ ./ci_script features
+      $ ./ci_script parallel_cucumber
