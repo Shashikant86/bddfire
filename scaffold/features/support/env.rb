@@ -95,6 +95,13 @@ Capybara.register_driver :sauce do |app|
     :url => "http://SAUCE_USERNAME:SAUCE_API_KEY@ondemand.saucelabs.com:80/wd/hub")
 end
 
+Capybara.register_driver :appium_android_web do |app|
+    capabilities = {:platformName => 'Android',  :deviceName => 'android', :browserName => 'Chrome', :uuid => ENV['ADB_SERIAL']}
+Capybara::Selenium::Driver.new(app,
+                                 :browser => :remote,
+                                 :desired_capabilities => capabilities,
+                                 :url => "http://0.0.0.0:4723/wd/hub")
+
 Capybara.register_driver :appium do |app|
     capabilities = {
                     :automationName => 'Appium',             # Appium (default) or Selendroid

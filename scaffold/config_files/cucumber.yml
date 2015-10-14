@@ -6,6 +6,7 @@ testingbot: DRIVER=testingbot
 poltergeist : DRIVER=poltergeist
 selenium : DRIVER=selenium
 appium : DRIVER=appium
+appium_android_web : DRIVER=appium_android_web
 sauce : DRIVER=sauce
 chrome: DRIVER=chrome
 parallel_html: --format html --out reports/process<%= ENV['TEST_ENV_NUMBER'] %>.html
