@@ -101,6 +101,7 @@ Capybara::Selenium::Driver.new(app,
                                  :browser => :remote,
                                  :desired_capabilities => capabilities,
                                  :url => "http://0.0.0.0:4723/wd/hub")
+end
 
 Capybara.register_driver :appium do |app|
     capabilities = {
