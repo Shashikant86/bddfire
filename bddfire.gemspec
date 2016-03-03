@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
   s.summary     = "BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework"
   s.description = %q{BDDfire: Automate Mobile and Web apps with less code - Instant BDD framework with Ruby, Cucumber, Capybara, selenium, Appium, Saucelabs, Browserstack, Testingbot, poltergeist, cuke_sniffer, rubocop, relish, yard and many more awesome libraries}
-  s.add_runtime_dependency "cucumber",  '~> 1.3', '>= 1.3.18'
-  s.add_runtime_dependency "capybara", '~> 2.4.4', '>= 2.4.1'
-  s.add_runtime_dependency "rspec", '~> 3.2.0', '>= 3.0.0'
-  s.add_runtime_dependency "selenium-webdriver", '~> 2.44.0', '>= 2.41.0'
+  s.add_runtime_dependency "cucumber",  '~> 2.3', '>= 2.3'
+  s.add_runtime_dependency "capybara", '~> 2.6', '>= 2.4'
+  s.add_runtime_dependency "rspec", '~> 3.4', '>= 3.0.0'
+  s.add_runtime_dependency "selenium-webdriver", '~> 2.52', '>= 2.52'
   s.add_runtime_dependency 'require_all', '~> 1.3.1', '>= 1.3.0'
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {features}/*`.split("\n")
