@@ -4,7 +4,7 @@ Then(/^the page title is "(.*?)"$/) do |title|
 end
 
 Then(/^I see the element "(.*?)" with the text "(.*?)"$/) do |element, text|
-  page.should have_css(element, :text => text)
+  page.should have_css(element, text: text)
 end
 
 Then(/^page contains "(.*?)"$/) do |element|
@@ -12,7 +12,7 @@ Then(/^page contains "(.*?)"$/) do |element|
 end
 
 Then(/^I see element "(.*?)" "(.*?)" times$/) do |element, count|
-  page.should have_css(element, :count => count)
+  page.should have_css(element, count: count)
 end
 
 Then(/^page contains the button "(.*?)"$/) do |button|

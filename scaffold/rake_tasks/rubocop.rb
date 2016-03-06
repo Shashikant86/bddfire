@@ -1,12 +1,11 @@
 require 'rubocop/rake_task'
 
-#desc "Run Rubocop"
+# desc "Run Rubocop"
 
-#Rubocop::RakeTask.new(:rubocop_rake) do |task|
+# Rubocop::RakeTask.new(:rubocop_rake) do |task|
 #	task.patterns = ['features/**/*.rb']
-#end
+# end
 
-task :rubocop do 
+task :rubocop do
   sh 'bundle exec rubocop'
 end
-	

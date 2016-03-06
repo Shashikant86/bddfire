@@ -1,6 +1,6 @@
-require "rubygems"
-require "bundler/setup"
+require 'rubygems'
+require 'bundler/setup'
 
-require "aruba"
+require 'aruba'
 
 require 'bddfire'
