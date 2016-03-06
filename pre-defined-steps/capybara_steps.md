@@ -20,7 +20,7 @@
 
        Given  I am on “url”
        When I fill in “element” with the text “text”
-       When I selet the “link” link
+       When I select the “link” link
        When I select the "button" button
        When I click on element having text “text"
        When I check “checkbox”

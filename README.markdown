@@ -1,6 +1,6 @@
 # bddfire
 
-BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack.Generate default toolkit around BDD with cucumber and friends
+BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends
 
 ### ===BDDfire: Write your tests not Framework===
 
@@ -23,7 +23,7 @@ In your project's root directory...
     $ bddfire fire_cucumber
 
 
-This will create 'cucumber' direcory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. This will create all the directories and files to support following tools
+This will create 'cucumber' directory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. This will create all the directories and files to support following tools
 * Capybara
 * Selenium-Webdriver
 * Poltergeist: PhantomJS based headless driver for capybara
@@ -32,7 +32,7 @@ This will create 'cucumber' direcory and one command will install Ruby Cucumber 
 * Saucelabs : Cloud testing framework
 * Browserstack : Cloud testing framework
 * TestingBot : Cloud testing framework
-* Relish : Living Documenation
+* Relish : Living Documentation
 * Yard : Cucumber documentation
 * Rubocop : Ruby code review tool
 * CI Support Script
@@ -132,7 +132,7 @@ This will report all the offence in rubocop.
 
 Currently, you can use the script 'ci_script' on Jenkins or Hudson. More CI Integration is on the way.
 
-You need pass rake rask to the script
+You need pass rake task to the script
 
       $ ./ci_script features
 
