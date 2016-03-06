@@ -8,7 +8,7 @@ AllCops:
     - tmp/**/*
 
 CollectionMethods:
-  Enabled: false 
+  Enabled: false
 
 Encoding:
   Enabled: false
@@ -30,14 +30,14 @@ MethodLength:
   Max: 20
 
 Blocks:
-  Enabled: false 
-  Enabled: false 
+  Enabled: false
+  Enabled: false
 
 AlignParameters:
   Enabled: false
 
 IfUnlessModifier:
-  Enabled: false 
+  Enabled: false
 
-TrailingComma:
+TrailingCommaInLiteral:
   Enabled: false
