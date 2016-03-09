@@ -4,7 +4,7 @@ Given(/^I am on the page "(.*?)"$/) do |url|
 end
 
 When(/^I go forward using browser$/) do
-   go_forward
+  go_forward
 end
 
 When(/^I go back using browser$/) do

@@ -3,126 +3,125 @@ require 'bddfire/version'
 require 'fileutils'
 require 'tempfile'
 require 'json'
-require "rubygems"
+require 'rubygems'
 
-lib_dir = File.expand_path("../lib", File.dirname(__FILE__))
-$:.unshift lib_dir unless $:.include?(lib_dir)
+lib_dir = File.expand_path('../lib', File.dirname(__FILE__))
+$LOAD_PATH.unshift lib_dir unless $LOAD_PATH.include?(lib_dir)
 
-@root_dir =File.join(FileUtils.pwd, "cucumber")
-@root_feature_dir =File.join(@root_dir, "features")
-@root_lib_dir =File.join(@root_dir, "lib")
-@root_scripts_dir =File.join(@root_dir, "script")
+@root_dir = File.join(FileUtils.pwd, 'cucumber')
+@root_feature_dir = File.join(@root_dir, 'features')
+@root_lib_dir = File.join(@root_dir, 'lib')
+@root_scripts_dir = File.join(@root_dir, 'script')
 @source_dir = File.join(File.dirname(__FILE__), '..', 'scaffold')
-@source_feature_dir =File.join(@source_dir, "features")
-@source_lib_dir =File.join(@source_dir, "lib")
-@source_scripts_dir =File.join(@source_dir, "scripts")
-@source_config_dir =File.join(@source_dir, "config_files")
+@source_feature_dir = File.join(@source_dir, 'features')
+@source_lib_dir = File.join(@source_dir, 'lib')
+@source_scripts_dir = File.join(@source_dir, 'scripts')
+@source_config_dir = File.join(@source_dir, 'config_files')
 
 def bddfire_scaffold
-  if File.exists?(@root_feature_dir)
-    puts "There is already features directory. Please remane existing features directory to carry on "
+  if File.exist?(@root_feature_dir)
+    puts 'There is already features directory. Please remane existing features directory to carry on '
     exit 1
   end
 
-  msg("Info") do
-
+  msg('Info') do
     puts "=======CREATING 'cucumber' DIRECTORY WITH TEST FRAMEWORK============\n \n \n"
     puts "\n"
     puts "\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying all config files for cucumber projects============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying Gemfile containing all required Gems============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying cucumber.yml file with profiles of all Capybara Drivers============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying pakage.json file with required npm dependencies============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying README.md file with template usage============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying browser.json file with browsers and devices config for cloud testng============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying .relish file, you need to add your relish api key============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying .rubocop.yml file to check Ruby code============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying c.ruby-version file ============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying .travis.yml, you can delete if you are using other CI tool============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying .yard.yml to generate YARD documentation for your project============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying Rakefile to generate Rake tasks ============\n"
-    sleep (2)
+    sleep 2
   end
 
   FileUtils.cp_r(@source_config_dir, @root_dir)
 
-  msg("Info") do
+  msg('Info') do
     puts "All Config files created. \n"
   end
 
-  if File.exists?(@root_feature_dir)
-    puts "There is already features directory. Please remane existing features directory to carry on "
+  if File.exist?(@root_feature_dir)
+    puts 'There is already features directory. Please remane existing features directory to carry on '
     exit 1
   end
 
-  msg("Info") do
+  msg('Info') do
     puts "=======Copying features and support directories for cucumber projects============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying Pages directories with Page Object Classes============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying step_definitions directoy============\n"
-    sleep (2)
+    sleep 2
     puts "=======Copying Suppoort directory with all Capybara driver setup============\n"
-    sleep (2)
+    sleep 2
     puts "=======Creating env.rb and setting Selenium, Poltergeist, Saucelabs, Appium, browerstack drivers============\n"
-    sleep (2)
+    sleep 2
     puts "=======Creating responsive.rb file to run scenarios with different viewports============\n"
-    sleep (2)
+    sleep 2
   end
 
   FileUtils.cp_r(@source_feature_dir, @root_feature_dir)
 
-  msg("Info") do
+  msg('Info') do
     puts "features and subdirectories created. \n"
   end
 
-  if File.exists?(@root_lib_dir)
-    puts "There is already lib directory. Please remane existing lib directory to carry on "
+  if File.exist?(@root_lib_dir)
+    puts 'There is already lib directory. Please remane existing lib directory to carry on '
     exit 1
   end
-  msg("Info") do
+  msg('Info') do
     puts "=======Copying lib directory to put ruby config files for cucumber projects============\n"
-    sleep (2)
+    sleep 2
   end
 
   FileUtils.cp_r(@source_lib_dir, @root_lib_dir)
 
-  msg("Info") do
+  msg('Info') do
     puts "lib subdirectory created. \n"
   end
 
-  if File.exists?(@root_scripts_dir)
-    puts "There is already scripts directory. Please remane existing scripts directory to carry on "
+  if File.exist?(@root_scripts_dir)
+    puts 'There is already scripts directory. Please remane existing scripts directory to carry on '
     exit 1
   end
-  msg("Info") do
+  msg('Info') do
     puts "=======Copying lib directory to put ruby config files for cucumber projects============\n"
-    sleep (2)
+    sleep 2
   end
 
   FileUtils.cp_r(@source_scripts_dir, @root_scripts_dir)
 
-  msg("Info") do
+  msg('Info') do
     puts "Scripts subdirectory created. \n"
   end
 end
 
-def msg(title, &block)
-  puts "\n" + "-"*10 + title + "-"*10
-  block.call
-  puts "-"*10 + "-------" + "-"*10 + "\n"
+def msg(title, &_block)
+  puts "\n" + '-' * 10 + title + '-' * 10
+  yield
+  puts '-' * 10 + '-------' + '-' * 10 + "\n"
 end
 
 def print_usage
@@ -167,18 +166,17 @@ def print_help
 EOF
 end
 
-
-if (ARGV.length == 0)
+if ARGV.length == 0
   print_usage
 else
-	cmd = ARGV.shift
-	if cmd == "help"
-  		print_help
-	elsif cmd == "fire_cucumber"
+  cmd = ARGV.shift
+  if cmd == 'help'
+    print_help
+  elsif cmd == 'fire_cucumber'
     bddfire_scaffold
-	elsif cmd == "version"
-		puts BDDfire::VERSION
-  	else
-  		print_usage
-	end
+  elsif cmd == 'version'
+    puts BDDfire::VERSION
+  else
+    print_usage
+  end
 end

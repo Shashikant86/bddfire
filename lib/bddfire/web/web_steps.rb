@@ -11,11 +11,11 @@ Then(/^I should see "(.*?)"$/) do |text|
   page.should have_content text
 end
 
-When(/^I fill "(.*?)" into field with (.+) "(.*?)"$/) do |data, type, locator|
+When(/^I fill "(.*?)" into field with (.+) "(.*?)"$/) do |data, _type, locator|
   fill_in locator, with: data
 end
 
-When(/^I select the "(.*?)" link$/)  do |link|
+When(/^I select the "(.*?)" link$/) do |link|
   click_link(link)
 end
 
@@ -40,7 +40,7 @@ When(/^I choose radio button"(.*?)"$/) do |radiobutton|
 end
 
 When(/^I select option "(.*?)" from the dropdown "(.*?)"$/) do |option, dropdown|
-  select(option, :from => dropdown)
+  select(option, from: dropdown)
 end
 
 When(/^I attach the file "(.*?)" to the field "(.*?)"$/) do |file, locator|
