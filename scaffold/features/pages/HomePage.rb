@@ -18,3 +18,5 @@ end
 # You can the use these methods in the step_definitions as
 # @home_page = HomePage.new(Capybara.current_session)
 # @home_page.visit_home_page
+
+#Alternatively you can use Site Prism thingy
