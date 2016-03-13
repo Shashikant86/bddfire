@@ -67,17 +67,24 @@ Once installed, you can run cucumber with multiple cabybara driver
 
 #Usage
 ### Pre-defined-steps
+### Browser Based Pre-defined-steps
+
 You can use[Browser based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/capybara_steps.md) steps
+
+### Poltergeist Based Pre-defined-steps
 You can use headless Poltergeist based [headless Poltergeist based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/headless_steps.md) steps
+
+### Accessibility related Pre-defined-steps
 
 You can also use [Accessibility steps](https://github.com/Shashikant86/bddfire/blob/major-refactor/pre-defined-steps/accessibility_steps.md)
 
 ### Parallel Cucumber & Re-run Failed
+
 You can run entire test suite in 10 different processes but you can increase number of processes. The reports are generated for each process. If any scenario failed it will re-run. It will use poltergeist by default but you can change in Rakefile
 
          $ bundle exec rake parallel_cucumber
 
-###Selenium Firefox
+### Selenium Firefox
 You can use selenium driver to run scenario in browser [firefox].
 
       $ bundle exec rake selenium
