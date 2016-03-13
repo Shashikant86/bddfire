@@ -2,11 +2,11 @@
 
 BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends. It also added support for Docker, Gatling, Axe Accessibility Engine
 
-### ===BDDfire: Write your tests not Framework===
+### ***** BDDfire: Instant Ruby-Cucumber Framework with Docker, Gatling, Accessibility Support************
 
 ## Installation
 
-The usual:
+Assuming you got Ruby installed. You can run
 
     $ gem install bddfire
 
@@ -16,11 +16,7 @@ or include it into the Gemfile
 
 ## Usage
 
-In your project's root directory...
-
 ### Instant Ruby Cucumber Framework
-
-## Cucumber
 
     $ bddfire fire_cucumber
 
@@ -41,10 +37,13 @@ This will create 'cucumber' directory and one command will install Ruby Cucumber
 * CI Support Script
 
 ## Load Testing : Gatling
+You can optionally install Gatling load testing setup.
+
        $ bddfire fire_load
 It will setup Load testing environment with gatling. It will create 'load' directory. It's optional but BDDfire will support it to execute your load tests.
 
 ## Accessibility Testing : Axe Engine
+You can optionally setup Accessibility Testing setup support Axe Engine
 
      $ bddfire fire_accessibility
 
@@ -52,13 +51,17 @@ It will setup accessibility frameworks in the 'accessibility' directory. It uses
 
 ## Docker Support
 
-BDDfire allow you execute your cucumber scenarios inside Docker containers. Scenarios with Poltergeist driver can be ran inside containers
+BDDfire allow you execute your cucumber scenarios inside Docker containers. Scenarios with Poltergeist driver can be ran inside containers. One script will do everything for you !
 
 
 ### Install & Run BDDfire framework
 
+Install your skeleton framework with BDDfire
 
-Now, we need to run bundle install [Fix nokogiri error if you get any by using supported nokogiri version]
+     $ bddfire fire_cucumber
+     $ bddfire fire_load
+     $ bddfire fire_accessibility
+Now you should have your framework ready inside 'cucumber' directory. Just install predefine Gems or you can add your own Gems.            
 
      $ cd cucumber
      $ bundle install
@@ -66,7 +69,9 @@ Now, we need to run bundle install [Fix nokogiri error if you get any by using s
 Once installed, you can run cucumber with multiple cabybara driver
 
 #Usage
-### Pre-defined-steps
+## BDDfire Pre-defined-steps
+BDDfire allow us to use predefined steps so that we don't have to write more code while writing cucumber steps. BDDfire has following predefined steps which can be used anytime during your project.
+
 ### Browser Based Pre-defined-steps
 
 You can use[Browser based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/capybara_steps.md) steps
@@ -99,7 +104,6 @@ You can run your scenarios in Google Chrome
 
            $ bundle exec rake chrome
 
-
 ###Cloud Testing Frameworks
  Please enter your USERNAME and KEY in the env.rb file
 
@@ -107,6 +111,7 @@ You can run your scenarios in Google Chrome
 
 
 ###Appium:
+
 Run Appium server in the background.
 
      $ npm install
@@ -124,6 +129,7 @@ OR
      $ bundle exec cucumber -p appium
 
 ###Cuke_sniffer
+
 You can use cuke_sniffer to detect smells in your Cucumber. It will generate reports in the cuke_sniffer.html in the 'reports' directory.
 
       $ rake cuke_sniffer
@@ -133,6 +139,7 @@ You can use cuke_sniffer to detect smells in your Cucumber. It will generate rep
 You can use rubocop to detect ruby errors in your Ruby file
 
       $ rake rubocop
+
 This will report all the offence in rubocop.
 
 
@@ -159,14 +166,6 @@ We can run accessibility checks on our web page using BDDfire. You have to pass 
 
        $ bundle exec cucumber accessibility/features URL="http://www.google.co.uk"
 
-
-## CI Integration
-
-Currently, you can use the script 'ci_script' on Jenkins or Hudson. More CI Integration is on the way.
-
-You need pass rake task to the script
-
-      $ ./ci_script features
 
 
 # TODO
