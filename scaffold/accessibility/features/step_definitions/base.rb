@@ -3,7 +3,7 @@ require 'axe/cucumber/step_definitions'
 Given(/^I am on the page$/) do
   @page = Capybara.current_session
   @page.visit(ENV['URL'])
-  puts "=====You are currently checking the BBC page====="
+  puts "=====You are currently checking the page====="
   puts @page.current_url
   sleep(1)
 end
