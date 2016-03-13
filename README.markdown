@@ -1,6 +1,6 @@
 # bddfire
 
-BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends
+BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends. It also added support for Docker, Gatling, Axe Accessibility Engine
 
 ### ===BDDfire: Write your tests not Framework===
 
@@ -20,6 +20,8 @@ In your project's root directory...
 
 ### Instant Ruby Cucumber Framework
 
+## Cucumber
+
     $ bddfire fire_cucumber
 
 
@@ -27,6 +29,7 @@ This will create 'cucumber' directory and one command will install Ruby Cucumber
 * Capybara
 * Selenium-Webdriver
 * Poltergeist: PhantomJS based headless driver for capybara
+* Docker support to execute scenarios inside docker containers
 * Run scenarios in parallel 10 processes and rerun failed scenarios.
 * Appium : Mobile test automation Framework
 * Saucelabs : Cloud testing framework
@@ -37,8 +40,19 @@ This will create 'cucumber' directory and one command will install Ruby Cucumber
 * Rubocop : Ruby code review tool
 * CI Support Script
 
+## Load Testing : Gatling
+       $ bddfire fire_load
+It will setup Load testing environment with gatling. It will create 'load' directory. It's optional but BDDfire will support it to execute your load tests.
 
-If you don't already have a `Gemfile` or `Rakefile`, one will be created.
+## Accessibility Testing : Axe Engine
+
+     $ bddfire fire_accessibility
+
+It will setup accessibility frameworks in the 'accessibility' directory. It uses Axe engine to run accessibility tests.
+
+## Docker Support
+
+BDDfire allow you execute your cucumber scenarios inside Docker containers. Scenarios with Poltergeist driver can be ran inside containers
 
 
 ### Install & Run BDDfire framework
@@ -61,45 +75,29 @@ You can also use [Accessibility steps](https://github.com/Shashikant86/bddfire/b
 ### Parallel Cucumber & Re-run Failed
 You can run entire test suite in 10 different processes but you can increase number of processes. The reports are generated for each process. If any scenario failed it will re-run. It will use poltergeist by default but you can change in Rakefile
 
-         $ rake parallel_cucumber
+         $ bundle exec rake parallel_cucumber
 
 ###Selenium Firefox
 You can use selenium driver to run scenario in browser [firefox].
 
-      $ rake selenium
-
-You can run cucumber with profile like this
-
-         $ bundle exec cucumber -p selenium
+      $ bundle exec rake selenium
 
 ###Headless Poletergeist
 You can use PhantomJS based Capybara driver Poltergeist driver.
 
-
-You can run cucumber with profile like this
-
-      $ bundle exec cucumber -p poltergeist
-
-OR
-
-      $ rake poltergeist
+      $ bundle exec rake poltergeist
 
 ###Chrome Driver
 You can run your scenarios in Google Chrome
 
-           $ rake poltergeist
-You can run cucumber with profile like this
-
-           $ bundle exec cucumber -p chrome
+           $ bundle exec rake chrome
 
 
 ###Cloud Testing Frameworks
  Please enter your USERNAME and KEY in the env.rb file
 
-         $ rake sauce/browserstack/testingbot
-  OR
+         $ bundle exec rake sauce/browserstack/testingbot
 
-      $ bundle exec cucumber -p sauce/browserstack/testingbot
 
 ###Appium:
 Run Appium server in the background.
@@ -129,6 +127,31 @@ You can use rubocop to detect ruby errors in your Ruby file
 
       $ rake rubocop
 This will report all the offence in rubocop.
+
+
+## Docker
+
+We can run our cucumber scenario inside Docker containers. Assuming you have Docker installed. Check your Docker installation before using.
+
+      $ bundle exec rake docker
+This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'.       
+
+## Gatling
+
+You can use Gatling setup to execute load tests against your endpoints. Simply change 'load/user-files/simulation/SampleLoadTEST.scala' file and puts your URL to Test as base URL.
+
+          $ cd load
+          $ sh gatling_local.sh
+This will run load tests against your url. You are free to record new simulations. Once finished there will be link to HTML report at the end.
+
+There is CI integration to plug it with jenkins.
+
+## Accessibility Testing : Axe
+
+We can run accessibility checks on our web page using BDDfire. You have to pass URL as environment variable e.g
+
+       $ bundle exec cucumber accessibility/features URL="http://www.google.co.uk"
+
 
 ## CI Integration
 

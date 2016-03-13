@@ -83,4 +83,9 @@ task :start_appium do
   sh ' ./node_modules/.bin/appium > /dev/null 2>&1'
 end
 
+task :docker do
+  puts '========Preparing docker environment to run cucumber tests inside docker containers======='
+  sh 'sh docker.sh'
+end
+
 task police: [:cleanup, :cuke_sniffer]

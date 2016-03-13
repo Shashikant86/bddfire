@@ -10,13 +10,11 @@ $LOAD_PATH.unshift lib_dir unless $LOAD_PATH.include?(lib_dir)
 
 @root_dir = File.join(FileUtils.pwd, 'cucumber')
 @root_feature_dir = File.join(@root_dir, 'features')
-@root_docker_dir = File.join(@root_dir, 'docker')
 @root_scripts_dir = File.join(@root_dir, 'script')
 @root_accessibility_dir = File.join(@root_dir, 'accessibility')
 @root_load_dir = File.join(@root_dir, 'load')
 @source_dir = File.join(File.dirname(__FILE__), '..', 'scaffold')
 @source_feature_dir = File.join(@source_dir, 'features')
-@source_docker_dir = File.join(@source_dir, 'docker')
 @source_scripts_dir = File.join(@source_dir, 'scripts')
 @source_config_dir = File.join(@source_dir, 'config_files')
 @source_load_dir = File.join(@source_dir, 'load')
@@ -75,15 +73,6 @@ def bddfire_scaffold
     puts "=======BDDfire created features and support directories for cucumber projects============\n"
   end
 
-  FileUtils.cp_r(@source_docker_dir, @root_dir)
-  msg('Info') do
-    puts "=======Docker Setup============\n"
-  end
-
-  msg('Docker Setup') do
-    puts "=======BDDfire created Docker directoy with all required Docker Setup============\n"
-  end
-
   FileUtils.cp_r(@source_scripts_dir, @root_scripts_dir)
 
   msg('Scripts') do
@@ -100,7 +89,7 @@ end
 
 def install
   msg('Installing BDDfire Dependencies') do
-    puts "Scripts subdirectory created. \n"
+    puts "Wait till bundler finish installtions. \n"
   end
   cmd = 'bundle install --gemfile=$(pwd)/cucumber/Gemfile --path=$(pwd)/cucumber/vendor/'
   system(cmd)
