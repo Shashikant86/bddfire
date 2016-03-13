@@ -7,4 +7,3 @@ Scenario Outline: Check for other elements with lang attributes
 Examples:
   |attributes|
   |html-lang |
-  |aria-roles|

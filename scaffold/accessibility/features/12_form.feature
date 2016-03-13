@@ -8,7 +8,4 @@ Scenario Outline: Make sure all the form elements are accessible
 Examples:
     | attributes       |
     | label-title-only |
-    | radiogroup       |
-    | region           |
-    | scope            |
-    | button-name      |
+  

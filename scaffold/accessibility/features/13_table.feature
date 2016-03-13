@@ -7,7 +7,4 @@ Scenario Outline: Tables in the page are accessibile
 
 Examples:
     | attributes   |
-    | layout-table |
     | data-table   |
-    | dlitem       |
-    | scope        |

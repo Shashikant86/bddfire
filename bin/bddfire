@@ -23,8 +23,8 @@ $LOAD_PATH.unshift lib_dir unless $LOAD_PATH.include?(lib_dir)
 @source_accessibility_dir = File.join(@source_dir, 'accessibility')
 
 def bddfire_scaffold
-  if File.exist?(@root_feature_dir)
-    puts 'There is already cucumber directory. Please remane existing features directory to carry on '
+  if File.exist?(@root_dir)
+    puts 'There is already cucumber directory. Please move existing cucumber directory to carry on '
     exit 1
   end
 
@@ -100,24 +100,35 @@ end
 
 def install
   msg('Installing BDDfire Dependencies') do
-  puts "Scripts subdirectory created. \n"
+    puts "Scripts subdirectory created. \n"
   end
-  cmd = "bundle install --gemfile=$(pwd)/cucumber/Gemfile --path=$(pwd)/cucumber/vendor/"
+  cmd = 'bundle install --gemfile=$(pwd)/cucumber/Gemfile --path=$(pwd)/cucumber/vendor/'
   system(cmd)
 end
 
 def accessibility
-  FileUtils.cp_r(@source_accessibility_dir, @root_accessibility_dir)
-  msg('Accessibility Setup') do
-    puts "Accessibility Setup to run accessibility tests  \n"
+  if File.exist?(@root_dir)
+    FileUtils.cp_r(@source_accessibility_dir, @root_accessibility_dir)
+    msg('Accessibility Setup') do
+      puts "Accessibility Setup to run accessibility tests  \n"
+    end
+  else
+    msg('BDDfire Voilation') do
+      puts "Please run 'fire_cucumber' before 'fire_accessibility' \n"
+    end
   end
 end
 
 def load
-  FileUtils.cp_r(@source_load_dir, @root_load_dir)
-
-  msg('Gatling') do
-    puts "Gatling setup to run load tests. \n"
+  if File.exist?(@root_dir)
+    FileUtils.cp_r(@source_load_dir, @root_load_dir)
+    msg('Gatling') do
+      puts "Gatling setup to run load tests. \n"
+    end
+  else
+    msg('BDDfire Voilation') do
+      puts "Please run 'fire_cucumber' before 'fire_load' \n"
+    end
   end
 end
 
@@ -131,9 +142,9 @@ def print_usage
       prints more detailed help information.
     fire_cucumber
       generate a features folder structure.
-    accessibility
+    fire_accessibility
         setup accessibility checks with axe-matchers
-    load
+    fire_load
         setup load and performance tests using Gatling
     version
       prints the gem version
@@ -152,8 +163,8 @@ def print_help
   <command-name> can be one of
     help
     fire_cucumber
-    accessibility
-    load
+    fire_accessibility
+    fire_load
     version
 
     Commands:
@@ -163,9 +174,9 @@ def print_help
              setting up project to ensure that the features folder contains
              the right step definitions and environment to run with cucumber.
 
-      accessibility : setup accessibility checks with axe-matchers
+      fire_accessibility : setup accessibility checks with axe-matchers
 
-      load : setup load and performance tests using Gatling
+      fire_load : setup load and performance tests using Gatling
 
       version : prints the gem version
 
@@ -184,9 +195,9 @@ else
     bddfire_scaffold
   elsif cmd == 'version'
     puts BDDfire::VERSION
-  elsif cmd == 'accessibility'
+  elsif cmd == 'fire_accessibility'
     accessibility
-  elsif cmd == 'load'
+  elsif cmd == 'fire_load'
     load
   else
     print_usage

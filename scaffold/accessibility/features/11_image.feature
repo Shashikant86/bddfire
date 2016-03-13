@@ -7,9 +7,4 @@ Scenario Outline: Images in the page should be accessible
 
 Examples:
     | attributes            |
-    | input-image-alt       |
     | image-alt             |
-    | audio-caption         |
-    | server-side-image-map |
-    | video-caption         |
-    | video-description     |
