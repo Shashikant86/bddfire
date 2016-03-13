@@ -5,6 +5,7 @@ require 'rspec'
 require 'capybara/poltergeist'
 require 'selenium-webdriver'
 require 'rubocop'
+require 'axe/cucumber/step_definitions'
 require 'bddfire'
 
 Capybara.configure do |config|
