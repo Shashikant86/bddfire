@@ -1,9 +1,9 @@
 #!/bin/sh
 
-ROOT_DIRECTORY=$(pwd)
+WORKSPACE=$(pwd)
 CONTAINER_NAME="bddfire-ci"
 IMAGE_NAME="bddfire-ci"
-CUCUMBER_COMMAND=$1
+
 
 function stop_container_if_already_running {
 
@@ -49,12 +49,11 @@ function check_container_exist {
 function run_container_with_volume {
   docker run -it -d -v $WORKSPACE/:/opt/bddfire --name ${CONTAINER_NAME} ${IMAGE_NAME}
   echo -e "Listing directoy structure of the cucumber project inside container"
-  docker exec ${CONTAINER_NAME} ls
+  docker exec ${CONTAINER_NAME} ls /opt/bddfire/
 }
 
 function delete_old_reports_screenshots {
-  docker exec ${CONTAINER_NAME}  rm -rf /opt/bddfire/test_results.html
-  docker exec ${CONTAINER_NAME}  rm -rf /opt/bddfire/screenshots
+  docker exec ${CONTAINER_NAME}  rm -rf /opt/bddfire/reports
 }
 
 function run_cucumber_tests {
@@ -75,7 +74,6 @@ function stop_container {
 docker stop ${CONTAINER_NAME}
 }
 
-stop_container_if_already_running
 check_image_exist
 check_container_exist
 delete_old_reports_screenshots

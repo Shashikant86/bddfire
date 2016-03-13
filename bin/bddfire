@@ -54,11 +54,11 @@ def bddfire_scaffold
   msg('.rubocop.yml') do
     puts "=======BDDfire created .rubocop.yml file to check Ruby code============\n"
   end
-  msg('.ruby-version') do
-    puts "=======BDDfire created .ruby-version file. You can add your own ruby verson ============\n"
+  msg('Dockerfile') do
+    puts "=======BDDfire created Dockerfile===========\n"
   end
-  msg('.travis.yml') do
-    puts "=======BDDfire created .travis.yml, you can delete if you are using other CI tool============\n"
+  msg('docker.sh') do
+    puts "=======BDDfire created script for Docker ============\n"
   end
   msg('.yard.yml') do
     puts "=======BDDfire created .yard.yml to generate YARD documentation for your project============\n"
@@ -75,7 +75,7 @@ def bddfire_scaffold
     puts "=======BDDfire created features and support directories for cucumber projects============\n"
   end
 
-  FileUtils.cp_r(@source_docker_dir, @root_docker_dir)
+  FileUtils.cp_r(@source_docker_dir, @root_dir)
   msg('Info') do
     puts "=======Docker Setup============\n"
   end
@@ -102,8 +102,8 @@ def install
   msg('Installing BDDfire Dependencies') do
   puts "Scripts subdirectory created. \n"
   end
-  cmd = 'cd #{root_dir} & bundle install --path=#{root_dir}/vendor'
-  exec(cmd)
+  cmd = "bundle install --gemfile=$(pwd)/cucumber/Gemfile --path=$(pwd)/cucumber/vendor/"
+  system(cmd)
 end
 
 def accessibility
@@ -131,8 +131,6 @@ def print_usage
       prints more detailed help information.
     fire_cucumber
       generate a features folder structure.
-    install
-       install ruby dependencies from gemfile in vendor directory
     accessibility
         setup accessibility checks with axe-matchers
     load
@@ -154,7 +152,6 @@ def print_help
   <command-name> can be one of
     help
     fire_cucumber
-    install
     accessibility
     load
     version
@@ -165,8 +162,6 @@ def print_help
       fire_cucumber  : creates a skeleton features dir. This is usually used once when
              setting up project to ensure that the features folder contains
              the right step definitions and environment to run with cucumber.
-
-      install : install ruby dependencies from gemfile in vendor directory
 
       accessibility : setup accessibility checks with axe-matchers
 
@@ -189,8 +184,6 @@ else
     bddfire_scaffold
   elsif cmd == 'version'
     puts BDDfire::VERSION
-  elsif cmd == 'install'
-    install
   elsif cmd == 'accessibility'
     accessibility
   elsif cmd == 'load'

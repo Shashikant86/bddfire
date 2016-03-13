@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
   s.summary     = 'BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework'
   s.description = 'BDDfire: Automate Mobile and Web apps with less code - Instant BDD framework with Ruby, Cucumber, Capybara, selenium, Appium, Saucelabs, Browserstack, Testingbot, poltergeist, cuke_sniffer, rubocop, relish, yard and many more awesome libraries'
-  s.add_runtime_dependency "bundler", '~> 1.11.2', '>= 1.9.0'
+  s.add_runtime_dependency "bundler"
   s.add_runtime_dependency "cucumber",  '~> 2.3', '>= 2.3'
   s.add_runtime_dependency "capybara", '~> 2.6', '>= 2.4'
   s.add_runtime_dependency "rspec", '~> 3.4', '>= 3.0.0'
