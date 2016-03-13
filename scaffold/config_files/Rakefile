@@ -64,8 +64,6 @@ Cucumber::Rake::Task.new(:testingbot) do |t|
 end
 
 Cucumber::Rake::Task.new(:appium) do |t|
-  puts '===== Make sure you have started Appium server in the background====='
-  puts '===== You can start it with rake task start_appium ....====='
   t.cucumber_opts = "features -p appium_android_web ADB_SERIAL=#{ADB_SERIAL} --format pretty --profile html "
 end
 
