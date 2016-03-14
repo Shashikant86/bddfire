@@ -164,7 +164,8 @@ There is CI integration to plug it with jenkins.
 
 We can run accessibility checks on our web page using BDDfire. You have to pass URL as environment variable e.g
 
-       $ bundle exec cucumber accessibility/features URL="http://www.google.co.uk"
+       $ cd accessibility
+       $ bundle exec cucumber -r features URL="http://www.google.co.uk"
 
 
 
