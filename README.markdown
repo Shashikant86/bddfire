@@ -2,7 +2,7 @@
 
 BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends. It also added support for Docker, Gatling, Axe Accessibility Engine
 
-### ***** BDDfire: Instant Ruby-Cucumber Framework with Docker, Gatling, Accessibility Support************
+### BDDfire: Instant Ruby-Cucumber Framework with Docker, Gatling, Accessibility Support
 
 ## Installation
 
@@ -61,6 +61,10 @@ Install your skeleton framework with BDDfire
      $ bddfire fire_cucumber
      $ bddfire fire_load
      $ bddfire fire_accessibility
+
+##### Watch it in action : 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/qr8jLmOd-mM/0.jpg)](http://www.youtube.com/watch?v=qr8jLmOd-mM)
+
 Now you should have your framework ready inside 'cucumber' directory. Just install predefine Gems or you can add your own Gems.            
 
      $ cd cucumber
@@ -82,6 +86,7 @@ You can use headless Poltergeist based [headless Poltergeist based](https://gith
 ### Accessibility related Pre-defined-steps
 
 You can also use [Accessibility steps](https://github.com/Shashikant86/bddfire/blob/major-refactor/pre-defined-steps/accessibility_steps.md)
+
 
 ### Parallel Cucumber & Re-run Failed
 
@@ -148,7 +153,11 @@ This will report all the offence in rubocop.
 We can run our cucumber scenario inside Docker containers. Assuming you have Docker installed. Check your Docker installation before using.
 
       $ bundle exec rake docker
-This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'.       
+This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'.  
+
+##### Watch it in action
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/MQub3qHRwkM/0.jpg)](http://www.youtube.com/watch?v=MQub3qHRwkM)
 
 ## Gatling
 
@@ -160,6 +169,11 @@ This will run load tests against your url. You are free to record new simulation
 
 There is CI integration to plug it with jenkins.
 
+##### Watch it in action
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/h6MBXGAeUVY/0.jpg)](http://www.youtube.com/watch?v=h6MBXGAeUVY)
+
+
 ## Accessibility Testing : Axe
 
 We can run accessibility checks on our web page using BDDfire. You have to pass URL as environment variable e.g
@@ -167,7 +181,9 @@ We can run accessibility checks on our web page using BDDfire. You have to pass 
        $ cd accessibility
        $ bundle exec cucumber -r features URL="http://www.google.co.uk"
 
+##### Watch it in action
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/aGPO_Bt5nmw/0.jpg)](http://www.youtube.com/watch?v=qr8jLmOd-mM)
 
 # TODO
 
