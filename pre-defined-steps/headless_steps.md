@@ -11,7 +11,7 @@ Noe: these steps will only work with Poltergeist driver for Capybara. Don't use 
          Then network traffic should contains resource ""
          When I request response headers
          When I request page "url" with header name "dd" value ""
-         When I set the cookie name "cookie" with value "ss"
+         When I set the cookie name "cookie" with value ""
          Then I should see the cookie ""
          When I removed cookie "cookie"
          When I clear all cookies
