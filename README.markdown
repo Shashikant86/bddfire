@@ -21,7 +21,11 @@ or include it into the Gemfile
     $ bddfire fire_cucumber
 
 
-This will create 'cucumber' directory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. This will create all the directories and files to support following tools
+This will create 'cucumber' directory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. 
+
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_cucumber.gif)
+
+This will create all the directories and files to support following tools
 * Capybara
 * Selenium-Webdriver
 * Poltergeist: PhantomJS based headless driver for capybara
@@ -41,6 +45,7 @@ You can optionally install Gatling load testing setup.
 
        $ bddfire fire_load
 It will setup Load testing environment with gatling. It will create 'load' directory. It's optional but BDDfire will support it to execute your load tests.
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_load.gif)
 
 ## Accessibility Testing : Axe Engine
 You can optionally setup Accessibility Testing setup support Axe Engine
@@ -48,10 +53,13 @@ You can optionally setup Accessibility Testing setup support Axe Engine
      $ bddfire fire_accessibility
 
 It will setup accessibility frameworks in the 'accessibility' directory. It uses Axe engine to run accessibility tests.
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_accessibility.gif)
 
 ## Docker Support
 
 BDDfire allow you execute your cucumber scenarios inside Docker containers. Scenarios with Poltergeist driver can be ran inside containers. One script will do everything for you !
+
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_docker.gif)
 
 
 ### Install & Run BDDfire framework
@@ -62,7 +70,7 @@ Install your skeleton framework with BDDfire
      $ bddfire fire_load
      $ bddfire fire_accessibility
 
-##### Watch it in action : 
+##### YOUTUBE VIDEO : 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/qr8jLmOd-mM/0.jpg)](http://www.youtube.com/watch?v=qr8jLmOd-mM)
 
 Now you should have your framework ready inside 'cucumber' directory. Just install predefine Gems or you can add your own Gems.            
@@ -71,6 +79,8 @@ Now you should have your framework ready inside 'cucumber' directory. Just insta
      $ bundle install
 
 Once installed, you can run cucumber with multiple cabybara driver
+
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_cucumber.gif)
 
 #Usage
 ## BDDfire Pre-defined-steps
@@ -153,9 +163,10 @@ This will report all the offence in rubocop.
 We can run our cucumber scenario inside Docker containers. Assuming you have Docker installed. Check your Docker installation before using.
 
       $ bundle exec rake docker
-This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'.  
+This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'. 
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_docker.gif)
 
-##### Watch it in action
+##### YOUTUBE VIDEO
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/MQub3qHRwkM/0.jpg)](http://www.youtube.com/watch?v=MQub3qHRwkM)
 
@@ -166,10 +177,11 @@ You can use Gatling setup to execute load tests against your endpoints. Simply c
           $ cd load
           $ sh gatling_local.sh
 This will run load tests against your url. You are free to record new simulations. Once finished there will be link to HTML report at the end.
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_load.gif)
 
 There is CI integration to plug it with jenkins.
 
-##### Watch it in action
+##### YOUTUBE VIDEO
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/h6MBXGAeUVY/0.jpg)](http://www.youtube.com/watch?v=h6MBXGAeUVY)
 
@@ -181,7 +193,8 @@ We can run accessibility checks on our web page using BDDfire. You have to pass 
        $ cd accessibility
        $ bundle exec cucumber -r features URL="http://www.google.co.uk"
 
-##### Watch it in action
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_accessibility.gif)
+##### YOUTUBE VIDEO
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/aGPO_Bt5nmw/0.jpg)](http://www.youtube.com/watch?v=qr8jLmOd-mM)
 
