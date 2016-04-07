@@ -23,6 +23,11 @@ or include it into the Gemfile
 
 This will create 'cucumber' directory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. 
 
+It will look like this : 
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_setup.gif)
+
+And running your first cucumber test with BDDfire as simpe as this : 
+
 ![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_cucumber.gif)
 
 This will create all the directories and files to support following tools
