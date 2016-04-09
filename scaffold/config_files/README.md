@@ -1,33 +1,15 @@
 # bddfire
 
-BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends. It also added support for Docker, Gatling, Axe Accessibility Engine
+Thanks for installing your Ruby-Cucumber framework with BDDfire. 
 
-### BDDfire: Instant Ruby-Cucumber Framework with Docker, Gatling, Accessibility Support
-
-## Installation
-
-Assuming you got Ruby installed. You can run
-
-    $ gem install bddfire
-
-or include it into the Gemfile
-
-    gem 'bddfire'
-
-## Usage
-
-### Instant Ruby Cucumber Framework
-
-    $ bddfire fire_cucumber
-
-
-This will create 'cucumber' directory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. This will create all the directories and files to support following tools
+This will create all the directories and files to support following tools
 * Capybara
 * Selenium-Webdriver
 * Poltergeist: PhantomJS based headless driver for capybara
 * Docker support to execute scenarios inside docker containers
 * Run scenarios in parallel 10 processes and rerun failed scenarios.
 * Appium : Mobile test automation Framework
+* API Testing : BDDfire uses RestClient to perform API testing
 * Saucelabs : Cloud testing framework
 * Browserstack : Cloud testing framework
 * TestingBot : Cloud testing framework
@@ -36,34 +18,6 @@ This will create 'cucumber' directory and one command will install Ruby Cucumber
 * Rubocop : Ruby code review tool
 * CI Support Script
 
-## Load Testing : Gatling
-You can optionally install Gatling load testing setup.
-
-       $ bddfire fire_load
-It will setup Load testing environment with gatling. It will create 'load' directory. It's optional but BDDfire will support it to execute your load tests.
-
-## Accessibility Testing : Axe Engine
-You can optionally setup Accessibility Testing setup support Axe Engine
-
-     $ bddfire fire_accessibility
-
-It will setup accessibility frameworks in the 'accessibility' directory. It uses Axe engine to run accessibility tests.
-
-## Docker Support
-
-BDDfire allow you execute your cucumber scenarios inside Docker containers. Scenarios with Poltergeist driver can be ran inside containers. One script will do everything for you !
-
-
-### Install & Run BDDfire framework
-
-Install your skeleton framework with BDDfire
-
-     $ bddfire fire_cucumber
-     $ bddfire fire_load
-     $ bddfire fire_accessibility
-
-##### Watch it in action : 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/qr8jLmOd-mM/0.jpg)](http://www.youtube.com/watch?v=qr8jLmOd-mM)
 
 Now you should have your framework ready inside 'cucumber' directory. Just install predefine Gems or you can add your own Gems.            
 
@@ -71,6 +25,8 @@ Now you should have your framework ready inside 'cucumber' directory. Just insta
      $ bundle install
 
 Once installed, you can run cucumber with multiple cabybara driver
+
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_cucumber.gif)
 
 #Usage
 ## BDDfire Pre-defined-steps
@@ -82,6 +38,10 @@ You can use[Browser based](https://github.com/Shashikant86/bddfire/blob/master/p
 
 ### Poltergeist Based Pre-defined-steps
 You can use headless Poltergeist based [headless Poltergeist based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/headless_steps.md) steps
+
+### API Based Pre-defined Steps 
+
+Just tag your scenario/feature with @api and You can use inbuilt predefined API Steps [API based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/rest_api_steps.md)
 
 ### Accessibility related Pre-defined-steps
 
@@ -108,6 +68,14 @@ You can use PhantomJS based Capybara driver Poltergeist driver.
 You can run your scenarios in Google Chrome
 
            $ bundle exec rake chrome
+
+### REST API Testing 
+You can run your scenarios in Google Chrome
+
+           $ bundle exec rake api
+
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_rest_api.gif
+
 
 ###Cloud Testing Frameworks
  Please enter your USERNAME and KEY in the env.rb file
@@ -148,16 +116,14 @@ You can use rubocop to detect ruby errors in your Ruby file
 This will report all the offence in rubocop.
 
 
+
 ## Docker
 
 We can run our cucumber scenario inside Docker containers. Assuming you have Docker installed. Check your Docker installation before using.
 
       $ bundle exec rake docker
-This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'.  
-
-##### Watch it in action
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/MQub3qHRwkM/0.jpg)](http://www.youtube.com/watch?v=MQub3qHRwkM)
+This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'. 
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_docker.gif)
 
 ## Gatling
 
@@ -166,12 +132,10 @@ You can use Gatling setup to execute load tests against your endpoints. Simply c
           $ cd load
           $ sh gatling_local.sh
 This will run load tests against your url. You are free to record new simulations. Once finished there will be link to HTML report at the end.
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_load.gif)
 
 There is CI integration to plug it with jenkins.
 
-##### Watch it in action
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/h6MBXGAeUVY/0.jpg)](http://www.youtube.com/watch?v=h6MBXGAeUVY)
 
 
 ## Accessibility Testing : Axe
@@ -181,6 +145,7 @@ We can run accessibility checks on our web page using BDDfire. You have to pass 
        $ cd accessibility
        $ bundle exec cucumber -r features URL="http://www.google.co.uk"
 
-##### Watch it in action
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_accessibility.gif)
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/aGPO_Bt5nmw/0.jpg)](http://www.youtube.com/watch?v=qr8jLmOd-mM)
+
+

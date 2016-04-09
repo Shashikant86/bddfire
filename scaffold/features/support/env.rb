@@ -7,6 +7,7 @@ require 'selenium-webdriver'
 require 'rubocop'
 require 'axe/cucumber/step_definitions'
 require 'bddfire'
+require 'rest-client'
 
 Capybara.configure do |config|
   config.run_server = false

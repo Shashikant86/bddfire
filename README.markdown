@@ -1,6 +1,6 @@
 # bddfire
 
-BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends. It also added support for Docker, Gatling, Axe Accessibility Engine
+BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends. BDDfire can do API testing with RestClient.  It also added support for Docker, Gatling, Axe Accessibility Engine
 
 ### BDDfire: Instant Ruby-Cucumber Framework with Docker, Gatling, Accessibility Support
 
@@ -37,6 +37,7 @@ This will create all the directories and files to support following tools
 * Docker support to execute scenarios inside docker containers
 * Run scenarios in parallel 10 processes and rerun failed scenarios.
 * Appium : Mobile test automation Framework
+* API Testing : BDDfire uses RestClient to perform API testing
 * Saucelabs : Cloud testing framework
 * Browserstack : Cloud testing framework
 * TestingBot : Cloud testing framework
@@ -44,6 +45,12 @@ This will create all the directories and files to support following tools
 * Yard : Cucumber documentation
 * Rubocop : Ruby code review tool
 * CI Support Script
+
+## API Testing 
+
+BDDfire has inbuilt support for the API Testing. BDDfire uses RestClient to make requests to URI. 
+
+You can use predefined API Steps [API based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/rest_api_steps.md)
 
 ## Load Testing : Gatling
 You can optionally install Gatling load testing setup.
@@ -98,6 +105,10 @@ You can use[Browser based](https://github.com/Shashikant86/bddfire/blob/master/p
 ### Poltergeist Based Pre-defined-steps
 You can use headless Poltergeist based [headless Poltergeist based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/headless_steps.md) steps
 
+### API Based Pre-defined Steps 
+
+Just tag your scenario/feature with @api and You can use inbuilt predefined API Steps [API based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/rest_api_steps.md)
+
 ### Accessibility related Pre-defined-steps
 
 You can also use [Accessibility steps](https://github.com/Shashikant86/bddfire/blob/major-refactor/pre-defined-steps/accessibility_steps.md)
@@ -123,6 +134,14 @@ You can use PhantomJS based Capybara driver Poltergeist driver.
 You can run your scenarios in Google Chrome
 
            $ bundle exec rake chrome
+
+### REST API Testing 
+You can run your scenarios in Google Chrome
+
+           $ bundle exec rake api
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_rest_api.gif
+
+
 
 ###Cloud Testing Frameworks
  Please enter your USERNAME and KEY in the env.rb file

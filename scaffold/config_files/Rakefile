@@ -86,4 +86,8 @@ task :docker do
   sh 'sh docker.sh'
 end
 
+task :api do
+  sh 'bundle exec cucumber -p api'
+end
+
 task police: [:cleanup, :cuke_sniffer]
