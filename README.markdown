@@ -139,7 +139,9 @@ You can run your scenarios in Google Chrome
 You can run your scenarios in Google Chrome
 
            $ bundle exec rake api
-![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_rest_api.gif
+
+
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_rest_api.gif)
 
 
 
