@@ -2,7 +2,7 @@
 
 BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends. BDDfire can do API testing with RestClient.  It also added support for Docker, Gatling, Axe Accessibility Engine
 
-### BDDfire: Instant Ruby-Cucumber Framework with Docker, Gatling, Accessibility Support
+### BDDfire: Instant Ruby-Cucumber Framework with Docker, Gatling, Accessibility, REST API Testing Support
 
 ## Installation
 
@@ -51,6 +51,8 @@ This will create all the directories and files to support following tools
 BDDfire has inbuilt support for the API Testing. BDDfire uses RestClient to make requests to URI. 
 
 You can use predefined API Steps [API based](https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/rest_api_steps.md)
+
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_api.gif)
 
 ## Load Testing : Gatling
 You can optionally install Gatling load testing setup.
@@ -141,7 +143,7 @@ You can run your scenarios in Google Chrome
            $ bundle exec rake api
 
 
-![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_rest_api.gif)
+![image](https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_api.gif)
 
 
 
