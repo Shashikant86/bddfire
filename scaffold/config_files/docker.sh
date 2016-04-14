@@ -61,7 +61,7 @@ function run_cucumber_tests {
   echo "\n Running Bundler"
   docker exec ${CONTAINER_NAME} bundle install --path vendor/
   echo "Now running cucumber tests"
-  docker exec ${CONTAINER_NAME} bundle exec rake poltergeist
+  docker exec ${CONTAINER_NAME} bundle exec cucumber -p poltergeist
   exit $?
 }
 
