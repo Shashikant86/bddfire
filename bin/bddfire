@@ -78,6 +78,13 @@ def bddfire_scaffold
   msg('Scripts') do
     puts "Scripts subdirectory created. \n"
   end
+
+  msg('Thanks for installing Cucumber functional test framework !') do
+    puts "=====BDDfire recommend you to install LOAD and Accessibility Frameworks as well====== \n"
+    puts "=====Just Run 'bddfire fire_load' and 'bddfire fire_accessibility' command now====== \n"
+  end
+
+
 end
 
 def msg(title, &_block)
