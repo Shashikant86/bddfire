@@ -18,7 +18,7 @@ end
 
 task :parallel_run do
   puts '===== Executing Tests in parallel'
-  system 'bundle exec parallel_cucumber features/ -o "-p parallel -p poltergeist -p pretty" -n 10'
+  system 'bundle exec parallel_cucumber features/ -o "-p parallel -p pretty" -n 10'
   puts ' ====== Parallel execution finished and cucumber_failure.log created ========='
 end
 
@@ -40,31 +40,31 @@ YARD::Rake::YardocTask.new(:yard) do |t|
 end
 
 Cucumber::Rake::Task.new(:selenium) do |t|
-  t.cucumber_opts = 'features -p selenium --format pretty --profile html '
+  t.cucumber_opts = 'features -p selenium --format pretty --profile html -p ~@api '
 end
 
 Cucumber::Rake::Task.new(:poltergeist) do |t|
-  t.cucumber_opts = 'features -p poltergeist --format pretty --profile html '
+  t.cucumber_opts = 'features -p poltergeist --format pretty --profile html -p ~@api '
 end
 
 Cucumber::Rake::Task.new(:chrome) do |t|
-  t.cucumber_opts = 'features -p chrome --format pretty --profile html '
+  t.cucumber_opts = 'features -p chrome --format pretty --profile html -p ~@api '
 end
 
 Cucumber::Rake::Task.new(:sauce) do |t|
-  t.cucumber_opts = 'features -p sauce --format pretty --profile html '
+  t.cucumber_opts = 'features -p sauce --format pretty --profile html -p ~@api '
 end
 
 Cucumber::Rake::Task.new(:browserstack) do |t|
-  t.cucumber_opts = 'features -p browserstack --format pretty --profile html '
+  t.cucumber_opts = 'features -p browserstack --format pretty --profile html -p ~@api '
 end
 
 Cucumber::Rake::Task.new(:testingbot) do |t|
-  t.cucumber_opts = 'features -p testingbot --format pretty --profile html '
+  t.cucumber_opts = 'features -p testingbot --format pretty --profile html -p ~@api '
 end
 
 Cucumber::Rake::Task.new(:appium) do |t|
-  t.cucumber_opts = "features -p appium_android_web ADB_SERIAL=#{ADB_SERIAL} --format pretty --profile html "
+  t.cucumber_opts = "features -p appium_android_web ADB_SERIAL=#{ADB_SERIAL} --format pretty --profile html -p ~@api "
 end
 
 task :cuke_sniffer do

@@ -84,7 +84,7 @@ def msg(title, &_block)
   puts "\n" + '-' * 10 + title + '-' * 10
   yield
   puts '-' * 10 + '-------' + '-' * 10 + "\n"
-  sleep 2
+  sleep 1
 end
 
 def install

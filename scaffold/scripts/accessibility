@@ -1,0 +1,4 @@
+#!/bin/bash
+PAGE=$1
+cd accessibility
+bundle exec cucumber -r features/general_accessibility_check.feature URL=$PAGE
