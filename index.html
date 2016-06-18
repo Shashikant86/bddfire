@@ -41,11 +41,6 @@
 <h3>
 <a id="bddfire-instant-ruby-cucumber-framework-with-docker-gatling-accessibility-rest-api-testing-support" class="anchor" href="#bddfire-instant-ruby-cucumber-framework-with-docker-gatling-accessibility-rest-api-testing-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BDDfire: Instant Ruby-Cucumber Framework with Docker, Gatling, Accessibility, REST API Testing Support</h3>
 
-<h1>
-<a id="watch-quick-demo" class="anchor" href="#watch-quick-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Watch Quick Demo</h1>
-
-<p><a href="http://www.youtube.com/watch?v=FUWJUFWUNyo"><img src="http://img.youtube.com/vi/FUWJUFWUNyo/0.jpg" alt="IMAGE ALT TEXT HERE"></a></p>
-
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
@@ -68,9 +63,9 @@
 <pre><code>$ bddfire fire_cucumber
 </code></pre>
 
-<p>This will create 'cucumber' directory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. </p>
+<p><img src="https://raw.githubusercontent.com/Shashikant86/bddfire-gifs/master/bddfire_setup.gif" alt="BDDfire_Setup"></p>
 
-<p><img src="https://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_cucumber.gif" alt=""></p>
+<p>This will create 'cucumber' directory and one command will install Ruby Cucumber framework with all possibly supported tools in the 'cucumber' directory. </p>
 
 <p>This will create all the directories and files to support following tools</p>
 
@@ -91,38 +86,6 @@
 <li>CI Support Script</li>
 </ul>
 
-<h2>
-<a id="api-testing" class="anchor" href="#api-testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Testing</h2>
-
-<p>BDDfire has inbuilt support for the API Testing. BDDfire uses RestClient to make requests to URI. </p>
-
-<p>You can use predefined API Steps <a href="https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/rest_api_steps.md">API based</a></p>
-
-<h2>
-<a id="load-testing--gatling" class="anchor" href="#load-testing--gatling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Load Testing : Gatling</h2>
-
-<p>You can optionally install Gatling load testing setup.</p>
-
-<pre><code>   $ bddfire fire_load
-</code></pre>
-
-<p>It will setup Load testing environment with gatling. It will create 'load' directory. It's optional but BDDfire will support it to execute your load tests.</p>
-
-<h2>
-<a id="accessibility-testing--axe-engine" class="anchor" href="#accessibility-testing--axe-engine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accessibility Testing : Axe Engine</h2>
-
-<p>You can optionally setup Accessibility Testing setup support Axe Engine</p>
-
-<pre><code> $ bddfire fire_accessibility
-</code></pre>
-
-<p>It will setup accessibility frameworks in the 'accessibility' directory. It uses Axe engine to run accessibility tests.</p>
-
-<h2>
-<a id="docker-support" class="anchor" href="#docker-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docker Support</h2>
-
-<p>BDDfire allow you execute your cucumber scenarios inside Docker containers. Scenarios with Poltergeist driver can be ran inside containers. One script will do everything for you !</p>
-
 <h3>
 <a id="install--run-bddfire-framework" class="anchor" href="#install--run-bddfire-framework" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install &amp; Run BDDfire framework</h3>
 
@@ -133,46 +96,30 @@
  $ bddfire fire_accessibility
 </code></pre>
 
-<h5>
-<a id="youtube-video-" class="anchor" href="#youtube-video-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>YOUTUBE VIDEO :</h5>
-
-<p><a href="http://www.youtube.com/watch?v=qr8jLmOd-mM"><img src="http://img.youtube.com/vi/qr8jLmOd-mM/0.jpg" alt="IMAGE ALT TEXT HERE"></a></p>
-
-<p>Now you should have your framework ready inside 'cucumber' directory. Just install predefine Gems or you can add your own Gems.            </p>
+<p>Now you should have your framework ready inside 'cucumber' directory. Just install predefine Gems or you can add your own Gems. You can see animated GIF above how it works.          </p>
 
 <pre><code> $ cd cucumber
  $ bundle install
 </code></pre>
 
-<p>Once installed, you can run cucumber with multiple cabybara driver</p>
+<p>Once installed, you can run cucumber with multiple capybara driver. Here is demo of running test with Poltergeist and FireFox Driver </p>
 
-<h1>
-<a id="usage-1" class="anchor" href="#usage-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+<p><img src="https://raw.githubusercontent.com/Shashikant86/bddfire-gifs/master/bddfire_cucumber.gif" alt="BDDfire_Cucumber"></p>
 
-<h2>
-<a id="bddfire-pre-defined-steps" class="anchor" href="#bddfire-pre-defined-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BDDfire Pre-defined-steps</h2>
+<h4>
+<a id="bddfire-pre-defined-steps" class="anchor" href="#bddfire-pre-defined-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BDDfire Pre-defined-steps</h4>
 
 <p>BDDfire allow us to use predefined steps so that we don't have to write more code while writing cucumber steps. BDDfire has following predefined steps which can be used anytime during your project.</p>
 
-<h3>
-<a id="browser-based-pre-defined-steps" class="anchor" href="#browser-based-pre-defined-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser Based Pre-defined-steps</h3>
+<h4>
+<a id="browser-based-pre-defined-steps" class="anchor" href="#browser-based-pre-defined-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser Based Pre-defined-steps</h4>
 
 <p>You can use<a href="https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/capybara_steps.md">Browser based</a> steps</p>
 
-<h3>
-<a id="poltergeist-based-pre-defined-steps" class="anchor" href="#poltergeist-based-pre-defined-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Poltergeist Based Pre-defined-steps</h3>
+<h4>
+<a id="poltergeist-based-pre-defined-steps" class="anchor" href="#poltergeist-based-pre-defined-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Poltergeist Based Pre-defined-steps</h4>
 
 <p>You can use headless Poltergeist based <a href="https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/headless_steps.md">headless Poltergeist based</a> steps</p>
-
-<h3>
-<a id="api-based-pre-defined-steps" class="anchor" href="#api-based-pre-defined-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Based Pre-defined Steps</h3>
-
-<p>Just tag your scenario/feature with @api and You can use inbuilt predefined API Steps <a href="https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/rest_api_steps.md">API based</a></p>
-
-<h3>
-<a id="accessibility-related-pre-defined-steps" class="anchor" href="#accessibility-related-pre-defined-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accessibility related Pre-defined-steps</h3>
-
-<p>You can also use <a href="https://github.com/Shashikant86/bddfire/blob/major-refactor/pre-defined-steps/accessibility_steps.md">Accessibility steps</a></p>
 
 <h3>
 <a id="parallel-cucumber--re-run-failed" class="anchor" href="#parallel-cucumber--re-run-failed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parallel Cucumber &amp; Re-run Failed</h3>
@@ -209,10 +156,13 @@
 <h3>
 <a id="rest-api-testing" class="anchor" href="#rest-api-testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>REST API Testing</h3>
 
-<p>You can run your scenarios in Google Chrome</p>
+<p>You can run your scenarios in Google Chrome. 
+Just tag your scenario/feature with @api and You can use inbuilt predefined API Steps <a href="https://github.com/Shashikant86/bddfire/blob/master/pre-defined-steps/rest_api_steps.md">API based</a></p>
 
 <pre><code>       $ bundle exec rake api
 </code></pre>
+
+<p><img src="https://raw.githubusercontent.com/Shashikant86/bddfire-gifs/master/bddfire_cucumber.gif" alt="BDDfire_API"></p>
 
 <h3>
 <a id="cloud-testing-frameworks" class="anchor" href="#cloud-testing-frameworks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cloud Testing Frameworks</h3>
@@ -272,12 +222,8 @@
 <pre><code>  $ bundle exec rake docker
 </code></pre>
 
-<p>This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'. </p>
-
-<h5>
-<a id="youtube-video" class="anchor" href="#youtube-video" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>YOUTUBE VIDEO</h5>
-
-<p><a href="http://www.youtube.com/watch?v=MQub3qHRwkM"><img src="http://img.youtube.com/vi/MQub3qHRwkM/0.jpg" alt="IMAGE ALT TEXT HERE"></a></p>
+<p>This will build Docker image 'bddfire-ci' and run cucumber scenarios inside container 'bddfire-ci'. 
+<img src="https://raw.githubusercontent.com/Shashikant86/bddfire-gifs/master/bddfire_docker.gif" alt="BDDfire_Docker"></p>
 
 <h2>
 <a id="gatling" class="anchor" href="#gatling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gatling</h2>
@@ -288,15 +234,10 @@
       $ sh gatling_local.sh
 </code></pre>
 
-<p>This will run load tests against your url. You are free to record new simulations. Once finished there will be link to HTML report at the end.
-<img src="http://github.com/Shashikant86/bddfire-gifs/blob/master/bddfire_load.gif" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/Shashikant86/bddfire-gifs/master/bddfire_load.gif" alt="BDDfire_Load">
+This will run load tests against your url. You are free to record new simulations. Once finished there will be link to HTML report at the end.</p>
 
-<p>There is CI integration to plug it with jenkins.</p>
-
-<h5>
-<a id="youtube-video-1" class="anchor" href="#youtube-video-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>YOUTUBE VIDEO</h5>
-
-<p><a href="http://www.youtube.com/watch?v=h6MBXGAeUVY"><img src="http://img.youtube.com/vi/h6MBXGAeUVY/0.jpg" alt="IMAGE ALT TEXT HERE"></a></p>
+<p>There is CI integration to plug it with Jenkins.</p>
 
 <h2>
 <a id="accessibility-testing--axe" class="anchor" href="#accessibility-testing--axe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accessibility Testing : Axe</h2>
@@ -307,10 +248,15 @@
    $ bundle exec cucumber -r features URL="http://www.google.co.uk"
 </code></pre>
 
-<h5>
-<a id="youtube-video-2" class="anchor" href="#youtube-video-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>YOUTUBE VIDEO</h5>
+<p><img src="https://raw.githubusercontent.com/Shashikant86/bddfire-gifs/master/bddfire_accessibility.gif" alt="BDDfire_Accessibility">
+Accessibility related Pre-defined-steps</p>
 
-<p><a href="http://www.youtube.com/watch?v=qr8jLmOd-mM"><img src="http://img.youtube.com/vi/aGPO_Bt5nmw/0.jpg" alt="IMAGE ALT TEXT HERE"></a></p>
+<p>You can also use <a href="https://github.com/Shashikant86/bddfire/blob/major-refactor/pre-defined-steps/accessibility_steps.md">Accessibility steps</a></p>
+
+<h1>
+<a id="watch-entire-demo" class="anchor" href="#watch-entire-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Watch Entire Demo</h1>
+
+<p><a href="http://www.youtube.com/watch?v=FUWJUFWUNyo"><img src="http://img.youtube.com/vi/FUWJUFWUNyo/0.jpg" alt="IMAGE ALT TEXT HERE"></a></p>
 
 <h1>
 <a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h1>
@@ -325,7 +271,7 @@
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LICENSE</h2>
 
-<p>Copyright © 2014 Shashikant Jagtap, <a href="http://shashikantjagtap.net">http://shashikantjagtap.net</a></p>
+<p>Copyright © 2016 Shashikant Jagtap, <a href="http://shashikantjagtap.net">http://shashikantjagtap.net</a></p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
