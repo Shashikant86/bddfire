@@ -1,3 +1,6 @@
+
+<a href="https://travis-ci.org/Shashikant86/bddfire/"><img src="https://img.shields.io/travis/Shashikant86/bddfire.svg" /></a>
+
 # bddfire
 
 BDDfire: Automate Mobile & Web apps with less code. An instant Ruby-Cucumber BDD framework which supports various popular open-source libraries like Capybara, Selenium-WebDriver, Poltergeist, Relish, Cuke_sniffer, Rubocop, Appium, Saucelabs, Browserstack. Generate default toolkit around BDD with cucumber and friends. BDDfire can do API testing with RestClient.  It also added support for Docker, Gatling, Axe Accessibility Engine
