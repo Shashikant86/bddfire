@@ -4,5 +4,7 @@ doc/*
 *.gem
 .bundle
 .yardoc
+*.DS_Store
+.DS_Store
 
 
