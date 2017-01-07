@@ -1,11 +1,11 @@
-Feature: Install bddfire 
+Feature: Install bddfire
 
 
   Scenario: Print version
     Given I successfully run `bddfire version`
-    Then output should be 
+    Then output should be
     """
-    2.0.4
+    2.0.6
     """
 
   Scenario: Using rubygems

@@ -1,8 +1,9 @@
-Feature: Install bddfire 
+Feature: Install bddfire
 
 
   Scenario: Using rubygems
-    Given I successfully run `gem install bddfire`
-    Then bddfire should be installed on the local system
-
-    
+    Given I successfully run `gem list | bddfire`
+    Then the output should contain:
+    """
+    bddfire
+    """
