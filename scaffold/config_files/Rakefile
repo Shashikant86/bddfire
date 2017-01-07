@@ -19,7 +19,7 @@ end
 task :parallel_run do
   puts '===== Executing Tests in parallel'
   system 'bundle exec parallel_cucumber features/ -o "-p parallel -p pretty" -n 10'
-  puts ' ====== Parallel execution finished and cucumber_failure.log created ========='
+  puts ' ====== Parallel execution finished ========'
 end
 
 task :rerun do
@@ -31,7 +31,7 @@ task :rerun do
   end
 end
 
-task parallel_cucumber: [:cleanup, :parallel_run, :rerun]
+task parallel_cucumber: [:cleanup, :parallel_run]
 
 # Rake::Task["parallel_cucumber"].invoke
 

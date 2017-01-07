@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.description = 'A Wholesale framework for web, mobile, api, load, accessibility testing. Get you going in a minute. An instant setup of Ruby, Cucumber, Capybara, selenium, REST API Appium, Docker, Gatling and Axe Engine'
   s.add_runtime_dependency "bundler"
   s.add_runtime_dependency "nokogiri"
+  s.add_runtime_dependency "parallel_cucumber"
   s.add_runtime_dependency "cucumber"
   s.add_runtime_dependency "capybara"
   s.add_runtime_dependency "poltergeist"

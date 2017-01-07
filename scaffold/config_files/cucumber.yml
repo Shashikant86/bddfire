@@ -12,4 +12,4 @@ sauce : DRIVER=sauce
 chrome: DRIVER=chrome
 parallel_html: --format html --out reports/process<%= ENV['TEST_ENV_NUMBER'] %>.html
 pretty: -f pretty
-parallel: --format pretty -p poltergeist --profile parallel_html --format ParallelTests::Cucumber::FailuresLogger --out cucumber_failures.log
+parallel: --format pretty -p poltergeist --profile parallel_html
