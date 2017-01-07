@@ -1,4 +1,4 @@
-default: -p selenium
+default: -p poltergeist
 html: --format --out reports/test-report.html
 bvt: --tags @test
 browserstack : DRIVER=browserstack
