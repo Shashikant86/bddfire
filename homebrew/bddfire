@@ -1,0 +1,198 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+require 'tempfile'
+
+lib_dir = File.expand_path('../lib', File.dirname(__FILE__))
+$LOAD_PATH.unshift lib_dir unless $LOAD_PATH.include?(lib_dir)
+
+@root_dir = File.join(FileUtils.pwd, 'cucumber')
+@root_feature_dir = File.join(@root_dir, 'features')
+@root_scripts_dir = File.join(@root_dir, 'script')
+@root_accessibility_dir = File.join(@root_dir, 'accessibility')
+@root_load_dir = File.join(@root_dir, 'load')
+@source_dir = File.join(File.dirname(__FILE__), '..', 'scaffold')
+@source_feature_dir = File.join(@source_dir, 'features')
+@source_scripts_dir = File.join(@source_dir, 'scripts')
+@source_config_dir = File.join(@source_dir, 'config_files')
+@source_load_dir = File.join(@source_dir, 'load')
+@source_accessibility_dir = File.join(@source_dir, 'accessibility')
+
+def bddfire_scaffold
+  if File.exist?(@root_dir)
+    puts 'There is already cucumber directory. Please move existing cucumber directory to carry on '
+    exit 1
+  end
+
+  FileUtils.cp_r(@source_config_dir, @root_dir)
+  msg ('Info') do
+    puts "=======BDDfire is creating 'cucumber' framework. Please have a look which files are being created============\n"
+  end
+
+  msg('Gemfile') do
+    puts "=======BDDfire created Gemfile containing all required Gems============\n"
+  end
+  msg('cucumber.yml') do
+    puts "=======BDDfire created cucumber.yml file with profiles of all Capybara Drivers============\n"
+  end
+  msg('package.json') do
+    puts "=======BDDfire created pakage.json file with required npm dependencies============\n"
+  end
+  msg('README.md') do
+    puts "=======BDDfire created README.md file with template usage============\n"
+  end
+  msg('browser.json') do
+    puts "=======BDDfire created browser.json file with browsers and devices config for cloud testng============\n"
+  end
+  msg('.relish') do
+    puts "=======BDDfire created .relish file, you need to add your relish api key============\n"
+  end
+  msg('.rubocop.yml') do
+    puts "=======BDDfire created .rubocop.yml file to check Ruby code============\n"
+  end
+  msg('Dockerfile') do
+    puts "=======BDDfire created Dockerfile===========\n"
+  end
+  msg('docker.sh') do
+    puts "=======BDDfire created script for Docker ============\n"
+  end
+  msg('.yard.yml') do
+    puts "=======BDDfire created .yard.yml to generate YARD documentation for your project============\n"
+  end
+  msg('Rakefile') do
+    puts "=======BDDfire created Rakefile to generate Rake tasks ============\n"
+  end
+  msg('Info') do
+    puts "All Config files created. \n"
+  end
+
+  FileUtils.cp_r(@source_feature_dir, @root_feature_dir)
+  msg('feature directory') do
+    puts "=======BDDfire created features and support directories for cucumber projects============\n"
+  end
+
+  FileUtils.cp_r(@source_scripts_dir, @root_scripts_dir)
+
+  msg('Scripts') do
+    puts "Scripts subdirectory created. \n"
+  end
+
+  msg('Thanks for installing Cucumber functional test framework !') do
+    puts "=====BDDfire recommend you to install LOAD and Accessibility Frameworks as well====== \n"
+    puts "=====Just Run 'bddfire fire_load' and 'bddfire fire_accessibility' command now====== \n"
+  end
+
+
+end
+
+def msg(title, &_block)
+  puts "\n" + '-' * 10 + title + '-' * 10
+  yield
+  puts '-' * 10 + '-------' + '-' * 10 + "\n"
+  sleep 1
+end
+
+def install
+  msg('Installing BDDfire Dependencies') do
+    puts "Wait till bundler finish installtions. \n"
+  end
+  cmd = 'bundle install --gemfile=$(pwd)/cucumber/Gemfile --path=$(pwd)/cucumber/vendor/'
+  system(cmd)
+end
+
+def accessibility
+  if File.exist?(@root_dir)
+    FileUtils.cp_r(@source_accessibility_dir, @root_accessibility_dir)
+    msg('Accessibility Setup') do
+      puts "Accessibility Setup to run accessibility tests  \n"
+    end
+  else
+    msg('BDDfire Voilation') do
+      puts "Please run 'fire_cucumber' before 'fire_accessibility' \n"
+    end
+  end
+end
+
+def load
+  if File.exist?(@root_dir)
+    FileUtils.cp_r(@source_load_dir, @root_load_dir)
+    msg('Gatling') do
+      puts "Gatling setup to run load tests. \n"
+    end
+  else
+    msg('BDDfire Voilation') do
+      puts "Please run 'fire_cucumber' before 'fire_load' \n"
+    end
+  end
+end
+
+def print_usage
+  puts <<EOF
+
+  Usage: bddfire <command-name> [parameters] [options]
+
+  <command-name> can be one of
+    help
+      prints more detailed help information.
+    fire_cucumber
+      generate a features folder structure.
+    fire_accessibility
+        setup accessibility checks with axe-matchers
+    fire_load
+        setup load and performance tests using Gatling
+    version
+      prints the gem version
+
+
+  <options> can be
+     -v, --verbose   Turns on verbose logging
+EOF
+end
+
+def print_help
+  puts <<EOF
+
+  Usage: bddfire <command-name> [parameters] [options]
+
+  <command-name> can be one of
+    help
+    fire_cucumber
+    fire_accessibility
+    fire_load
+    version
+
+    Commands:
+      help : prints more detailed help information.
+
+      fire_cucumber  : creates a skeleton features dir. This is usually used once when
+             setting up project to ensure that the features folder contains
+             the right step definitions and environment to run with cucumber.
+
+      fire_accessibility : setup accessibility checks with axe-matchers
+
+      fire_load : setup load and performance tests using Gatling
+
+      version : prints the gem version
+
+  <Options>
+      -v, --verbose  Turns on verbose logging
+EOF
+end
+
+if ARGV.length == 0
+  print_usage
+else
+  cmd = ARGV.shift
+  if cmd == 'help'
+    print_help
+  elsif cmd == 'fire_cucumber'
+    bddfire_scaffold
+  elsif cmd == 'version'
+    puts "2.x"
+  elsif cmd == 'fire_accessibility'
+    accessibility
+  elsif cmd == 'fire_load'
+    load
+  else
+    print_usage
+  end
+end
