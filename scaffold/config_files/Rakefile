@@ -43,6 +43,10 @@ Cucumber::Rake::Task.new(:selenium) do |t|
   t.cucumber_opts = 'features -p selenium --format pretty --profile html -t ~@api '
 end
 
+Cucumber::Rake::Task.new(:firefox) do |t|
+  t.cucumber_opts = 'features -p selenium --format pretty --profile html -t ~@api '
+end
+
 Cucumber::Rake::Task.new(:poltergeist) do |t|
   t.cucumber_opts = 'features -p poltergeist --format pretty --profile html -t ~@api '
 end
