@@ -22,7 +22,7 @@
        When I fill in “element” with the text “text”
        When I select the “link” link
        When I select the "button" button
-       When I click on element having text “text"
+       When I click on link having text “text"
        When I check “checkbox”
        When I uncheck “checkbox”
        When I choose “radio button”
