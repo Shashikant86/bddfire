@@ -24,7 +24,7 @@ end
 
 Capybara.register_driver :poltergeist do |app|
   options = {
-    js_errors: true,
+    js_errors: (ENV['JS_ERRORS'] == "false" ? false : true),
     timeout: 120,
     debug: false,
     phantomjs_options: ['--load-images=no', '--disk-cache=false'],
