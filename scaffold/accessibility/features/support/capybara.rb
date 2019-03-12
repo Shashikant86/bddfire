@@ -22,7 +22,7 @@ Capybara.configure do |config|
   config.run_server = false
   config.javascript_driver = config.default_driver
   config.default_selector = :css
-  config.default_wait_time = 60
+  config.default_max_wait_time = 60
 end
 Capybara.register_driver :poltergeist do |app|
   options = {
