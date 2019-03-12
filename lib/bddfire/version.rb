@@ -1,3 +1,3 @@
 module BDDfire
-  VERSION = '2.0.8'.freeze
+  VERSION = '3.0.0'.freeze
 end
