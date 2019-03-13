@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bddfire (2.0.8)
+    bddfire (3.0.0)
       axe-matchers
       be_valid_asset
       bundler
@@ -228,4 +228,4 @@ DEPENDENCIES
   bddfire!
 
 BUNDLED WITH
-   1.17.3
+   1.16.1
