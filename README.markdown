@@ -135,6 +135,8 @@ You can use PhantomJS based Capybara driver Poltergeist driver.
 
       $ bundle exec rake poltergeist
 
+If you wish to disable JS errors you can add **JS_ERRORS=false** to the poltergeist key of cucumber.yml.
+
 ###Chrome Driver
 You can run your scenarios in Google Chrome
 

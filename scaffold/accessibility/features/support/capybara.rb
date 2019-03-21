@@ -26,7 +26,7 @@ Capybara.configure do |config|
 end
 Capybara.register_driver :poltergeist do |app|
   options = {
-    :js_errors => false,
+    :js_errors => (ENV['JS_ERRORS'] == "true" ? true : false),
     :timeout => 180,
     :debug => false
   }
